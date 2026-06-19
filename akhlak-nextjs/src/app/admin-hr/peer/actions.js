@@ -43,3 +43,26 @@ export async function createPeerMapping(formData) {
     return { success: false, message: error.message };
   }
 }
+
+export async function deletePeerMapping(penilaian_id) {
+  try {
+    const p = await prisma.penilaian.findUnique({ where: { id: parseInt(penilaian_id) } });
+    if (!p) throw new Error("Penilaian tidak ditemukan.");
+    if (p.tipe_relasi !== 'peer') throw new Error("Hanya bisa menghapus relasi peer.");
+    if (p.status === 'selesai') throw new Error("Tidak bisa menghapus penilaian yang sudah diselesaikan oleh penilai.");
+
+    // Delete detail penilaian first
+    await prisma.detailPenilaian.deleteMany({
+      where: { penilaian_id: parseInt(penilaian_id) }
+    });
+
+    await prisma.penilaian.delete({
+      where: { id: parseInt(penilaian_id) }
+    });
+
+    revalidatePath('/admin-hr/peer');
+    return { success: true };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+}

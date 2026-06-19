@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma';
 import { FiSearch } from 'react-icons/fi';
 import { AddPeerMappingButton } from './PeerClientUI';
+import { EditPeerClientUI } from './EditPeerClientUI';
 
 export const dynamic = 'force-dynamic';
 
@@ -127,7 +128,7 @@ export default async function PeerPage() {
                   </span>
                 </td>
                 <td>
-                  <button className="btn btn-sm btn-outline">Edit</button>
+                  <EditPeerClientUI user={user} allUsers={users} periodeId={activePeriode?.id} />
                 </td>
               </tr>
             ))}
