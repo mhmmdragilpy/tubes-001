@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periode Penilaian — Admin HR</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="admin-hr" data-page="periode">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+
+        <div class="page-header">
+          <h1 class="page-title">Manajemen Periode Penilaian</h1>
+          <div class="page-actions">
+            <button class="btn btn-dark">+ Tambah Periode</button>
+          </div>
+        </div>
+
+        <!-- Active Period Card -->
+        <div class="card mb-24" style="border: 2px solid #1F2937;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+            <div>
+              <span class="badge badge-dark">PERIODE AKTIF</span>
+              <h2 style="font-size:20px; font-weight:700; color:#1F2937; margin-top:8px;">Penilaian Semester 1 — 2026</h2>
+              <div style="font-size:13px; color:#6B7280; margin-top:4px;">📅 01 April 2026 — 14 April 2026</div>
+              <div style="font-size:12px; color:#6B7280; margin-top:2px;">Durasi: 14 hari</div>
+            </div>
+            <div style="text-align:center;">
+              <div class="donut-chart" style="width:100px; height:100px; margin:0 auto; background: conic-gradient(#4B5563 0% 73%, #E5E7EB 73% 100%);">
+                <div class="donut-inner" style="width:65px; height:65px;">
+                  <div class="donut-value" style="font-size:18px;">73%</div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:14px; font-weight:600; color:#1F2937;">180 / 245</div>
+              <div style="font-size:12px; color:#6B7280;">Responden</div>
+              <div style="margin-top:12px; display:flex; gap:8px;">
+                <button class="btn btn-danger btn-sm">Tutup Periode</button>
+                <button class="btn btn-outline btn-sm">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- History Table -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Riwayat Periode Penilaian</div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Periode</th>
+                  <th>Mulai</th>
+                  <th>Selesai</th>
+                  <th>Durasi</th>
+                  <th>Partisipasi</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Semester 1 — 2026</td>
+                  <td>01/04/2026</td>
+                  <td>14/04/2026</td>
+                  <td>14 hari</td>
+                  <td>180/245 (73%)</td>
+                  <td><span class="badge badge-dark">Aktif</span></td>
+                  <td><button class="btn btn-sm btn-outline">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Semester 2 — 2025</td>
+                  <td>01/10/2025</td>
+                  <td>14/10/2025</td>
+                  <td>14 hari</td>
+                  <td>230/240 (96%)</td>
+                  <td><span class="badge">Selesai</span></td>
+                  <td><button class="btn btn-sm btn-outline">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Semester 1 — 2025</td>
+                  <td>01/04/2025</td>
+                  <td>14/04/2025</td>
+                  <td>14 hari</td>
+                  <td>225/238 (95%)</td>
+                  <td><span class="badge">Selesai</span></td>
+                  <td><button class="btn btn-sm btn-outline">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Semester 2 — 2024</td>
+                  <td>01/10/2024</td>
+                  <td>14/10/2024</td>
+                  <td>14 hari</td>
+                  <td>210/235 (89%)</td>
+                  <td><span class="badge">Selesai</span></td>
+                  <td><button class="btn btn-sm btn-outline">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Semester 1 — 2024</td>
+                  <td>01/04/2024</td>
+                  <td>10/04/2024</td>
+                  <td>10 hari</td>
+                  <td>180/230 (78%)</td>
+                  <td><span class="badge">Selesai</span></td>
+                  <td><button class="btn btn-sm btn-outline">Lihat</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <span class="pagination-info">Menampilkan 1-5 dari 5</span>
+            <div class="pagination-buttons">
+              <div class="page-btn">&lt;</div>
+              <div class="page-btn active">1</div>
+              <div class="page-btn">&gt;</div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuesioner AKHLAK — Admin HR</title>
+  <link rel="stylesheet" href="../css/hifi.css">
+</head>
+<body data-role="admin-hr" data-page="kuesioner">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="page-header">
+          <h1 class="page-title">Bank Pertanyaan Kuesioner</h1>
+          <button class="btn btn-primary">+ Tambah Pertanyaan</button>
+        </div>
+
+        <div class="tabs">
+          <div class="tab-item active">Amanah</div>
+          <div class="tab-item">Kompeten</div>
+          <div class="tab-item">Harmonis</div>
+          <div class="tab-item">Loyal</div>
+          <div class="tab-item">Adaptif</div>
+          <div class="tab-item">Kolaboratif</div>
+        </div>
+
+        <div class="card mb-24">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <div class="card-title">Amanah</div>
+            <span class="badge badge-success">3 Pertanyaan Aktif</span>
+          </div>
+          <div class="card-subtitle mb-24">Memegang teguh kepercayaan yang diberikan.</div>
+
+          <div class="question-card" style="border-left: 4px solid var(--primary);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <div style="flex:1;">
+                <div class="question-number">Pertanyaan 1</div>
+                <div class="question-text">Seberapa sering karyawan menyelesaikan tugas sesuai deadline yang diberikan?</div>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button class="btn btn-sm btn-outline">Edit</button>
+                <div class="toggle active"></div>
+              </div>
+            </div>
+            <div class="text-xs text-muted mt-16">Tipe: Likert Scale 1-5 | Bobot: Normal</div>
+          </div>
+
+          <div class="question-card" style="border-left: 4px solid var(--primary);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <div style="flex:1;">
+                <div class="question-number">Pertanyaan 2</div>
+                <div class="question-text">Seberapa baik karyawan bertanggung jawab terhadap hasil pekerjaannya?</div>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button class="btn btn-sm btn-outline">Edit</button>
+                <div class="toggle active"></div>
+              </div>
+            </div>
+            <div class="text-xs text-muted mt-16">Tipe: Likert Scale 1-5 | Bobot: Normal</div>
+          </div>
+
+          <div class="question-card" style="border-left: 4px solid var(--border); opacity:0.6;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <div style="flex:1;">
+                <div class="question-number">Pertanyaan 3 (Draft)</div>
+                <div class="question-text">Seberapa sering karyawan menolak gratifikasi atau pemberian yang tidak sah?</div>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button class="btn btn-sm btn-outline">Edit</button>
+                <div class="toggle"></div>
+              </div>
+            </div>
+            <div class="text-xs text-muted mt-16">Tipe: Likert Scale 1-5 | Bobot: Normal</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

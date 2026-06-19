@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Peer — Admin HR</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="admin-hr" data-page="peer">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+
+        <div class="page-header">
+          <h1 class="page-title">Manajemen Daftar Peer</h1>
+          <div class="page-actions">
+            <button class="btn btn-dark">+ Buat Daftar Peer</button>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <select class="form-select"><option>Semua Divisi</option><option>Operasi</option><option>Keuangan</option><option>SDM</option><option>IT</option><option>Pemasaran</option></select>
+          <input type="text" class="form-input" placeholder="Cari karyawan..." style="min-width:200px;">
+          <button class="btn btn-dark">Cari</button>
+        </div>
+
+        <!-- Peer Card 1 -->
+        <div class="card mb-16">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+            <div style="display:flex; gap:12px; align-items:center;">
+              <span class="avatar avatar-lg">YK</span>
+              <div>
+                <div style="font-size:15px; font-weight:700; color:#1F2937;">Yoga Kameswara</div>
+                <div style="font-size:12px; color:#6B7280;">NIP: 102012330383 | Divisi: Operasi | Manager</div>
+              </div>
+            </div>
+            <span class="badge badge-dark">Disetujui</span>
+          </div>
+          <div style="margin-top:16px; padding:12px; border:1px solid #E5E7EB; border-radius:4px;">
+            <div style="font-size:12px; font-weight:700; color:#6B7280; margin-bottom:8px;">Daftar Penilai:</div>
+            <table style="font-size:13px;">
+              <tbody>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Atasan:</td><td style="padding:4px 12px;">Direktur Operasi</td><td><span class="badge">40%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Peer 1:</td><td style="padding:4px 12px;">Rina Permatasari</td><td><span class="badge">10%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Peer 2:</td><td style="padding:4px 12px;">Fajar Nugroho</td><td><span class="badge">10%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Bawahan 1:</td><td style="padding:4px 12px;">Wiranu Adji S.</td><td><span class="badge">15%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Bawahan 2:</td><td style="padding:4px 12px;">Hendra Wijaya</td><td><span class="badge">15%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Self:</td><td style="padding:4px 12px;">Yoga Kameswara</td><td><span class="badge">10%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
+            <button class="btn btn-sm btn-outline">Edit</button>
+            <button class="btn btn-sm btn-danger">Hapus</button>
+          </div>
+        </div>
+
+        <!-- Peer Card 2 -->
+        <div class="card mb-16">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+            <div style="display:flex; gap:12px; align-items:center;">
+              <span class="avatar avatar-lg">SN</span>
+              <div>
+                <div style="font-size:15px; font-weight:700; color:#1F2937;">Siti Nurhaliza</div>
+                <div style="font-size:12px; color:#6B7280;">NIP: 102012330401 | Divisi: Keuangan | Analyst</div>
+              </div>
+            </div>
+            <span class="badge" style="border-color:#92400E; color:#92400E;">Menunggu Approval</span>
+          </div>
+          <div style="margin-top:16px; padding:12px; border:1px solid #E5E7EB; border-radius:4px;">
+            <div style="font-size:12px; font-weight:700; color:#6B7280; margin-bottom:8px;">Daftar Penilai:</div>
+            <table style="font-size:13px;">
+              <tbody>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Atasan:</td><td style="padding:4px 12px;">Wiranu Adji S.</td><td><span class="badge">40%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Peer 1:</td><td style="padding:4px 12px;">Ahmad Rizky P.</td><td><span class="badge">10%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Peer 2:</td><td style="padding:4px 12px;">Dewi Sartika</td><td><span class="badge">10%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Bawahan:</td><td style="padding:4px 12px;">—</td><td><span class="badge">30%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Self:</td><td style="padding:4px 12px;">Siti Nurhaliza</td><td><span class="badge">10%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
+            <button class="btn btn-sm btn-outline">Edit</button>
+            <button class="btn btn-sm btn-danger">Hapus</button>
+          </div>
+        </div>
+
+        <!-- Peer Card 3 -->
+        <div class="card mb-16">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+            <div style="display:flex; gap:12px; align-items:center;">
+              <span class="avatar avatar-lg">HW</span>
+              <div>
+                <div style="font-size:15px; font-weight:700; color:#1F2937;">Hendra Wijaya</div>
+                <div style="font-size:12px; color:#6B7280;">NIP: 102012330512 | Divisi: IT | Staff</div>
+              </div>
+            </div>
+            <span class="badge badge-dark">Disetujui</span>
+          </div>
+          <div style="margin-top:16px; padding:12px; border:1px solid #E5E7EB; border-radius:4px;">
+            <div style="font-size:12px; font-weight:700; color:#6B7280; margin-bottom:8px;">Daftar Penilai:</div>
+            <table style="font-size:13px;">
+              <tbody>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Atasan:</td><td style="padding:4px 12px;">Ahmad Rizky P.</td><td><span class="badge">40%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Peer 1:</td><td style="padding:4px 12px;">Dewi Sartika</td><td><span class="badge">10%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Peer 2:</td><td style="padding:4px 12px;">Fajar Nugroho</td><td><span class="badge">10%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Bawahan:</td><td style="padding:4px 12px;">—</td><td><span class="badge">30%</span></td></tr>
+                <tr><td style="padding:4px 12px 4px 0; color:#6B7280;">Self:</td><td style="padding:4px 12px;">Hendra Wijaya</td><td><span class="badge">10%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
+            <button class="btn btn-sm btn-outline">Edit</button>
+            <button class="btn btn-sm btn-danger">Hapus</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

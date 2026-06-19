@@ -1,0 +1,159 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  nip           String    @unique @db.VarChar(20)
+  nama_lengkap  String    @db.VarChar(100)
+  email         String    @unique @db.VarChar(100)
+  password_hash String    @db.VarChar(255)
+  divisi        String    @db.VarChar(50)
+  jabatan       String    @db.VarChar(50)
+  role          Role
+  atasan_id     Int?
+  created_at    DateTime? @default(now()) @db.Timestamp(0)
+
+  atasan        User?     @relation("Bawahan", fields: [atasan_id], references: [id])
+  bawahan       User[]    @relation("Bawahan")
+
+  penilai       Penilaian[] @relation("Penilai")
+  dinilai       Penilaian[] @relation("Dinilai")
+  idp           Idp[]
+  notifikasi    Notifikasi[]
+
+  @@map("users")
+}
+
+model Periode {
+  id              Int       @id @default(autoincrement())
+  nama_periode    String    @db.VarChar(100)
+  tanggal_mulai   DateTime  @db.Date
+  tanggal_selesai DateTime  @db.Date
+  is_active       Boolean?  @default(false)
+  created_at      DateTime? @default(now()) @db.Timestamp(0)
+
+  penilaian       Penilaian[]
+  idp             Idp[]
+
+  @@map("periodes")
+}
+
+model Pertanyaan {
+  id              Int       @id @default(autoincrement())
+  kategori        Kategori
+  teks_pertanyaan String
+  is_active       Boolean?  @default(true)
+
+  detail_penilaian DetailPenilaian[]
+
+  @@map("pertanyaan")
+}
+
+model Penilaian {
+  id               Int       @id @default(autoincrement())
+  periode_id       Int
+  penilai_id       Int
+  dinilai_id       Int
+  tipe_relasi      TipeRelasi
+  status           StatusPenilaian? @default(belum)
+  approval_status  ApprovalStatus?  @default(pending)
+  catatan_kualitatif String?
+  created_at       DateTime? @default(now()) @db.Timestamp(0)
+
+  periode          Periode   @relation(fields: [periode_id], references: [id], onDelete: Cascade)
+  penilai          User      @relation("Penilai", fields: [penilai_id], references: [id], onDelete: Cascade)
+  dinilai          User      @relation("Dinilai", fields: [dinilai_id], references: [id], onDelete: Cascade)
+
+  detail_penilaian DetailPenilaian[]
+
+  @@map("penilaian")
+}
+
+model DetailPenilaian {
+  id            Int        @id @default(autoincrement())
+  penilaian_id  Int
+  pertanyaan_id Int
+  skor          Int
+
+  penilaian     Penilaian  @relation(fields: [penilaian_id], references: [id], onDelete: Cascade)
+  pertanyaan    Pertanyaan @relation(fields: [pertanyaan_id], references: [id], onDelete: Cascade)
+
+  @@map("detail_penilaian")
+}
+
+enum Role {
+  admin_hr  @map("admin-hr")
+  manajemen
+  atasan
+  karyawan
+}
+
+enum Kategori {
+  Amanah
+  Kompeten
+  Harmonis
+  Loyal
+  Adaptif
+  Kolaboratif
+}
+
+enum TipeRelasi {
+  atasan
+  bawahan
+  peer
+  self
+}
+
+enum StatusPenilaian {
+  belum
+  proses
+  selesai
+}
+
+enum ApprovalStatus {
+  pending
+  disetujui
+  ditolak
+}
+
+enum IdpStatus {
+  belum_mulai
+  sedang_berjalan
+  selesai
+}
+
+model Idp {
+  id                Int       @id @default(autoincrement())
+  user_id           Int
+  periode_id        Int
+  area_pengembangan Kategori
+  target_akhir      String
+  rencana_aksi      String
+  timeline          String
+  status            IdpStatus? @default(belum_mulai)
+  created_at        DateTime? @default(now()) @db.Timestamp(0)
+
+  user              User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  periode           Periode   @relation(fields: [periode_id], references: [id], onDelete: Cascade)
+
+  @@map("idps")
+}
+
+model Notifikasi {
+  id          Int       @id @default(autoincrement())
+  user_id     Int
+  judul       String    @db.VarChar(200)
+  pesan       String
+  link        String?   @db.VarChar(255)
+  is_read     Boolean?  @default(false)
+  created_at  DateTime? @default(now()) @db.Timestamp(0)
+
+  user        User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@map("notifikasi")
+}

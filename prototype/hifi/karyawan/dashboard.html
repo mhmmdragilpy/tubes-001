@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Karyawan</title>
+  <link rel="stylesheet" href="../css/hifi.css">
+</head>
+<body data-role="karyawan" data-page="dashboard">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+
+        <!-- Welcome Banner -->
+        <div class="welcome-bar">
+          <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+            <div>
+              <div class="welcome-title">Halo, Siti Nurhaliza!</div>
+              <div class="welcome-sub">NIP: 102012330401 | Keuangan — Analyst</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:12px; opacity:0.8; margin-bottom:4px;">Status Penilaian Saat Ini:</div>
+              <span class="badge" style="background:#FFF; color:var(--primary); font-size:14px; font-weight:700;">Periode Aktif (Sisa 5 Hari)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="stat-cards cols-3 mb-24">
+          <div class="stat-card">
+            <div class="stat-label">Skor AKHLAK Terakhir</div>
+            <div class="stat-value">4.2<span style="font-size:16px; color:var(--text-muted); font-weight:500;">/5.0</span></div>
+            <div class="stat-sub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg> 0.1 dari Semester 2 2025</div>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-label">Tugas Penilaian Anda</div>
+            <div class="stat-value">3<span style="font-size:16px; color:var(--text-muted); font-weight:500;">/5 Selesai</span></div>
+            <div class="stat-sub neutral" style="color:var(--text-main);">Progres: 60%</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-label">Persetujuan Peer</div>
+            <div class="stat-value" style="font-size:24px; margin-top:8px;">Disetujui</div>
+            <div class="stat-sub success"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Oleh Atasan (Budi Santoso)</div>
+          </div>
+        </div>
+
+        <div class="grid-55-45">
+          <!-- Tugas Penilaian -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Daftar Penilaian yang Harus Diisi</div>
+            </div>
+            
+            <div class="team-row">
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--primary-light); color:#FFF; display:flex; align-items:center; justify-content:center; font-weight:700;">BS</div>
+              <div class="team-info">
+                <div class="team-name">Budi Santoso</div>
+                <div class="team-sub"><span class="badge badge-primary" style="font-size:10px; padding:2px 6px; margin-right:4px;">Atasan</span> Deadline: 14/04</div>
+              </div>
+              <button class="btn btn-sm btn-primary">Isi Sekarang</button>
+            </div>
+            
+            <div class="team-row">
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--primary-light); color:#FFF; display:flex; align-items:center; justify-content:center; font-weight:700;">AR</div>
+              <div class="team-info">
+                <div class="team-name">Ahmad Rizky P.</div>
+                <div class="team-sub"><span class="badge badge-outline" style="font-size:10px; padding:2px 6px; margin-right:4px;">Peer</span> Deadline: 14/04</div>
+              </div>
+              <button class="btn btn-sm btn-primary">Isi Sekarang</button>
+            </div>
+            
+            <div class="team-row" style="opacity:0.6;">
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--success); color:#FFF; display:flex; align-items:center; justify-content:center; font-weight:700;">✓</div>
+              <div class="team-info">
+                <div class="team-name">Dewi Sartika</div>
+                <div class="team-sub"><span class="badge badge-outline" style="font-size:10px; padding:2px 6px; margin-right:4px;">Peer</span> Selesai pada 08/04</div>
+              </div>
+              <span class="text-sm font-weight-600" style="color:var(--success);">Selesai</span>
+            </div>
+
+            <div class="team-row" style="opacity:0.6;">
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--success); color:#FFF; display:flex; align-items:center; justify-content:center; font-weight:700;">✓</div>
+              <div class="team-info">
+                <div class="team-name">Self Assessment</div>
+                <div class="team-sub"><span class="badge badge-outline" style="font-size:10px; padding:2px 6px; margin-right:4px;">Self</span> Selesai pada 07/04</div>
+              </div>
+              <span class="text-sm font-weight-600" style="color:var(--success);">Selesai</span>
+            </div>
+          </div>
+
+          <!-- Radar Chart Snippet (Placeholder) -->
+          <div class="card" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+            <div class="card-title" style="align-self:flex-start; margin-bottom:20px;">Profil Nilai AKHLAK Terakhir</div>
+            <svg viewBox="0 0 300 280" style="width:100%; max-width:260px;">
+              <!-- Grid -->
+              <polygon points="150,30 250,80 250,180 150,230 50,180 50,80" fill="none" stroke="var(--border)" stroke-width="1"/>
+              <polygon points="150,60 220,95 220,165 150,200 80,165 80,95" fill="none" stroke="var(--border-focus)" stroke-width="0.5" stroke-dasharray="4"/>
+              
+              <!-- Data Polygon -->
+              <polygon points="150,50 230,90 240,170 150,210 70,170 60,85" fill="var(--secondary)" fill-opacity="0.2" stroke="var(--secondary)" stroke-width="2"/>
+              <circle cx="150" cy="50" r="4" fill="var(--secondary)"/>
+              <circle cx="230" cy="90" r="4" fill="var(--secondary)"/>
+              <circle cx="240" cy="170" r="4" fill="var(--secondary)"/>
+              <circle cx="150" cy="210" r="4" fill="var(--secondary)"/>
+              <circle cx="70" cy="170" r="4" fill="var(--secondary)"/>
+              <circle cx="60" cy="85" r="4" fill="var(--secondary)"/>
+              
+              <!-- Labels -->
+              <text x="150" y="20" text-anchor="middle" font-size="12" fill="var(--primary)" font-weight="600">Amanah</text>
+              <text x="260" y="78" text-anchor="start" font-size="12" fill="var(--primary)" font-weight="600">Kompeten</text>
+              <text x="260" y="188" text-anchor="start" font-size="12" fill="var(--primary)" font-weight="600">Harmonis</text>
+              <text x="150" y="250" text-anchor="middle" font-size="12" fill="var(--primary)" font-weight="600">Loyal</text>
+              <text x="40" y="188" text-anchor="end" font-size="12" fill="var(--primary)" font-weight="600">Adaptif</text>
+              <text x="40" y="78" text-anchor="end" font-size="12" fill="var(--primary)" font-weight="600">Kolaboratif</text>
+            </svg>
+            <a href="hasil.html" class="btn btn-sm btn-outline mt-16">Lihat Hasil Detail</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

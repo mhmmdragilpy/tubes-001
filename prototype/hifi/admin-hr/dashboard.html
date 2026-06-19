@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Admin HR</title>
+  <link rel="stylesheet" href="../css/hifi.css">
+</head>
+<body data-role="admin-hr" data-page="dashboard">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="welcome-bar">
+          <div class="welcome-title">Selamat Datang, Admin HR</div>
+          <div class="welcome-sub">Ringkasan Sistem Penilaian 360° AKHLAK — Semester 1 2026</div>
+        </div>
+
+        <div class="stat-cards">
+          <div class="stat-card primary">
+            <div class="stat-label">Total Karyawan</div>
+            <div class="stat-value">245</div>
+            <div class="stat-sub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg> 12 Karyawan Baru</div>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-label">Penilaian Selesai</div>
+            <div class="stat-value">200</div>
+            <div class="stat-sub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg> 82% dari target</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-label">Sedang Proses</div>
+            <div class="stat-value">30</div>
+            <div class="stat-sub neutral"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Menunggu submit</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Belum Mulai</div>
+            <div class="stat-value">15</div>
+            <div class="stat-sub negative"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/></svg> Perlu reminder</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Aktivitas Terkini</div>
+              <a href="#" class="btn btn-sm btn-outline">Lihat Semua</a>
+            </div>
+            <div class="team-row">
+              <span class="avatar avatar-sm">BS</span>
+              <div class="team-info"><div class="team-name">Budi Santoso (Atasan)</div><div class="team-sub">Menyelesaikan penilaian untuk 5 bawahan</div></div>
+              <span class="text-xs text-muted">10 mnt lalu</span>
+            </div>
+            <div class="team-row">
+              <span class="avatar avatar-sm">SN</span>
+              <div class="team-info"><div class="team-name">Siti Nurhaliza (Karyawan)</div><div class="team-sub">Membuka laporan hasil penilaian</div></div>
+              <span class="text-xs text-muted">1 jam lalu</span>
+            </div>
+            <div class="team-row">
+              <span class="avatar avatar-sm">AH</span>
+              <div class="team-info"><div class="team-name">Admin HR</div><div class="team-sub">Mengirim reminder massal</div></div>
+              <span class="text-xs text-muted">Kemarin</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Progres per Divisi</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div class="h-bar-item"><span class="h-bar-label">Operasi</span><div class="h-bar-track"><div class="h-bar-fill" style="width:85%;"></div></div><span class="h-bar-value">85%</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Keuangan</span><div class="h-bar-track"><div class="h-bar-fill" style="width:100%;"></div></div><span class="h-bar-value" style="color:var(--success);">100%</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">SDM</span><div class="h-bar-track"><div class="h-bar-fill" style="width:70%;"></div></div><span class="h-bar-value">70%</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">IT</span><div class="h-bar-track"><div class="h-bar-fill" style="width:90%;"></div></div><span class="h-bar-value">90%</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Pemasaran</span><div class="h-bar-track"><div class="h-bar-fill" style="width:60%; background:var(--warning);"></div></div><span class="h-bar-value" style="color:var(--warning);">60%</span></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekap Penilaian — Atasan</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="atasan" data-page="rekap">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">Rekap Penilaian Tim</h1></div>
+        <div class="filter-bar"><select class="form-select"><option>Semester 1 — 2026</option><option>Semester 2 — 2025</option></select><button class="btn btn-dark">Tampilkan</button></div>
+        <div class="stat-cards cols-3 mb-24">
+          <div class="stat-card"><div class="stat-label">Rata-rata Tim</div><div class="stat-value">4.1</div></div>
+          <div class="stat-card"><div class="stat-label">Tertinggi</div><div class="stat-value">4.6</div><div class="stat-sub">Akhmad Azmi A.</div></div>
+          <div class="stat-card"><div class="stat-label">Terendah</div><div class="stat-value">3.5</div><div class="stat-sub">Dewi Sartika</div></div>
+        </div>
+        <div class="card">
+          <table><thead><tr><th>No</th><th>Nama</th><th>Jabatan</th><th>A</th><th>K</th><th>H</th><th>L</th><th>A</th><th>K</th><th>Skor</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Akhmad Azmi A.</td><td>Staff</td><td>4.5</td><td>4.6</td><td>4.8</td><td>4.5</td><td>4.4</td><td>4.7</td><td><strong>4.6</strong></td><td><span class="badge badge-dark">Selesai</span></td></tr>
+              <tr><td>2</td><td>Siti Nurhaliza</td><td>Analyst</td><td>4.2</td><td>3.8</td><td>4.5</td><td>4.1</td><td>3.7</td><td>4.3</td><td><strong>4.1</strong></td><td><span class="badge badge-dark">Selesai</span></td></tr>
+              <tr><td>3</td><td>Hendra Wijaya</td><td>Staff</td><td>4.0</td><td>4.1</td><td>3.9</td><td>4.0</td><td>3.8</td><td>4.2</td><td><strong>4.0</strong></td><td><span class="badge">Proses</span></td></tr>
+              <tr><td>4</td><td>Fajar Nugroho</td><td>Supervisor</td><td>3.7</td><td>3.5</td><td>3.8</td><td>3.6</td><td>3.4</td><td>3.7</td><td><strong>3.6</strong></td><td><span class="badge" style="color:#991B1B; border-color:#991B1B;">Belum</span></td></tr>
+              <tr><td>5</td><td>Dewi Sartika</td><td>Staff</td><td>3.5</td><td>3.4</td><td>3.6</td><td>3.5</td><td>3.3</td><td>3.5</td><td><strong>3.5</strong></td><td><span class="badge" style="color:#991B1B; border-color:#991B1B;">Belum</span></td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top:16px; text-align:right;"><button class="btn btn-outline">📊 Export Excel</button></div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

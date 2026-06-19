@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil — Admin HR</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="admin-hr" data-page="profil">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+
+        <div class="page-header">
+          <h1 class="page-title">Manajemen Profil</h1>
+        </div>
+
+        <div class="grid-35-65">
+          <!-- Left: Profile Card -->
+          <div class="card text-center">
+            <div class="avatar avatar-xl" style="margin:0 auto;">AH</div>
+            <button class="btn btn-sm btn-outline" style="margin:12px auto 0;">Ubah Foto</button>
+            <div style="margin-top:16px; font-size:18px; font-weight:700; color:#1F2937;">Admin HR</div>
+            <span class="badge badge-dark" style="margin-top:8px;">Admin HR</span>
+            <div style="margin-top:16px; font-size:13px; color:#6B7280;">
+              <div>NIP: 102012330100</div>
+              <div style="margin-top:4px;">Divisi: SDM</div>
+              <div style="margin-top:4px;">Member sejak: Maret 2024</div>
+            </div>
+          </div>
+
+          <!-- Right: Forms -->
+          <div>
+            <!-- Personal Info -->
+            <div class="card mb-24">
+              <div class="card-title mb-16">Informasi Pribadi</div>
+              <div class="form-group">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-input" value="Admin HR">
+              </div>
+              <div class="form-group">
+                <label class="form-label">NIP</label>
+                <input type="text" class="form-input" value="102012330100" disabled style="background:#F3F4F6; color:#9CA3AF;">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" value="admin@energi.co.id">
+              </div>
+              <div class="form-group">
+                <label class="form-label">No. Telepon</label>
+                <input type="tel" class="form-input" value="081234567890">
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                <div class="form-group">
+                  <label class="form-label">Divisi</label>
+                  <select class="form-select">
+                    <option>SDM</option><option>Operasi</option><option>Keuangan</option><option>IT</option><option>Pemasaran</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Jabatan</label>
+                  <select class="form-select">
+                    <option>Admin</option><option>Staff</option><option>Supervisor</option><option>Manager</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-dark">Simpan Perubahan</button>
+            </div>
+
+            <!-- Change Password -->
+            <div class="card">
+              <div class="card-title mb-16">Ubah Password</div>
+              <div class="form-group">
+                <label class="form-label">Password Lama</label>
+                <input type="password" class="form-input" placeholder="Masukkan password lama">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password Baru</label>
+                <input type="password" class="form-input" placeholder="Masukkan password baru">
+                <div style="margin-top:4px; height:4px; background:#E5E7EB; border-radius:2px;">
+                  <div style="width:60%; height:100%; background:#4B5563; border-radius:2px;"></div>
+                </div>
+                <div style="font-size:11px; color:#6B7280; margin-top:4px;">Kekuatan: Sedang</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Konfirmasi Password Baru</label>
+                <input type="password" class="form-input" placeholder="Masukkan ulang password baru">
+              </div>
+              <button class="btn btn-dark">Ubah Password</button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

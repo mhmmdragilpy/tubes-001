@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Sistem Penilaian 360° AKHLAK</title>
+  <link rel="stylesheet" href="css/lofi.css">
+</head>
+<body>
+
+  <div class="login-layout">
+    <!-- Left Side -->
+    <div class="login-left">
+      <div class="login-brand">
+        Sistem Penilaian 360°<br>Core Values AKHLAK
+      </div>
+      <div class="login-tagline">
+        Platform Digital Evaluasi Perilaku Karyawan<br>PT Energi Nusantara
+      </div>
+      <div style="margin-top: 40px; border: 1px dashed #9CA3AF; padding: 20px; border-radius: 4px; width: 200px; text-align: center; color: #9CA3AF; font-size: 12px;">
+        [ Geometric Pattern ]
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="login-right">
+      <div class="login-card">
+        <div class="login-logo">LOGO</div>
+
+        <div class="login-title">Selamat Datang</div>
+        <div class="login-subtitle">Masuk ke akun Anda</div>
+
+        <div class="form-group">
+          <label class="form-label">Username</label>
+          <div class="form-input-icon">
+            <span class="input-icon">👤</span>
+            <input type="text" class="form-input" placeholder="Masukkan username">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="form-input-icon">
+            <span class="input-icon">🔒</span>
+            <input type="password" class="form-input" placeholder="Masukkan password">
+          </div>
+        </div>
+
+        <div class="login-options">
+          <label>
+            <input type="checkbox"> Ingat Saya
+          </label>
+          <a href="#">Lupa Password?</a>
+        </div>
+
+        <button class="btn btn-dark btn-login" onclick="showRoleSelect()">Masuk</button>
+
+        <!-- Role Selection (appears after clicking Masuk) -->
+        <div id="roleSelect" style="display:none; margin-top: 20px; border: 1px solid #D1D5DB; border-radius: 4px; padding: 16px;">
+          <div style="font-size: 13px; font-weight: 700; color: #1F2937; margin-bottom: 12px; text-align: center;">Pilih Role untuk Preview</div>
+          <a href="admin-hr/dashboard.html" class="btn btn-dark" style="width:100%; margin-bottom:8px; justify-content:center;">Admin HR</a>
+          <a href="atasan/dashboard.html" class="btn btn-dark" style="width:100%; margin-bottom:8px; justify-content:center;">Atasan</a>
+          <a href="karyawan/dashboard.html" class="btn btn-dark" style="width:100%; margin-bottom:8px; justify-content:center;">Karyawan</a>
+          <a href="manajemen/dashboard.html" class="btn btn-dark" style="width:100%; justify-content:center;">Manajemen</a>
+        </div>
+
+        <div class="login-footer">© 2026 PT Energi Nusantara</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showRoleSelect() {
+      document.getElementById('roleSelect').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Analitik — Manajemen</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="manajemen" data-page="dashboard">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="stat-cards mb-24">
+          <div class="stat-card"><div class="stat-label">Total Dinilai</div><div class="stat-value">230</div><div class="stat-sub">dari 245 karyawan</div></div>
+          <div class="stat-card"><div class="stat-label">Rata-rata Skor</div><div class="stat-value">4.1</div><div class="stat-sub">↑ +0.3 dari semester lalu</div></div>
+          <div class="stat-card"><div class="stat-label">Tingkat Partisipasi</div><div class="stat-value">94%</div></div>
+          <div class="stat-card"><div class="stat-label">Gap Rata-rata</div><div class="stat-value">0.3</div></div>
+        </div>
+
+        <div class="grid-2 mb-24">
+          <div class="card">
+            <div class="card-title mb-16">Distribusi Skor per Divisi</div>
+            <div class="h-bar-chart">
+              <div class="h-bar-item"><span class="h-bar-label">Operasi</span><div class="h-bar-track"><div class="h-bar-fill" style="width:86%;"></div></div><span class="h-bar-value">4.3</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Keuangan</span><div class="h-bar-track"><div class="h-bar-fill" style="width:82%;"></div></div><span class="h-bar-value">4.1</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">SDM</span><div class="h-bar-track"><div class="h-bar-fill" style="width:88%;"></div></div><span class="h-bar-value">4.4</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">IT</span><div class="h-bar-track"><div class="h-bar-fill" style="width:78%;"></div></div><span class="h-bar-value">3.9</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Pemasaran</span><div class="h-bar-track"><div class="h-bar-fill" style="width:74%;"></div></div><span class="h-bar-value">3.7</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title mb-16">Tren Penilaian per Semester</div>
+            <svg viewBox="0 0 400 160" style="width:100%;">
+              <line x1="50" y1="140" x2="370" y2="140" stroke="#D1D5DB" stroke-width="1"/>
+              <line x1="50" y1="20" x2="50" y2="140" stroke="#D1D5DB" stroke-width="1"/>
+              <line x1="50" y1="100" x2="370" y2="100" stroke="#E5E7EB" stroke-width="0.5" stroke-dasharray="4"/>
+              <line x1="50" y1="60" x2="370" y2="60" stroke="#E5E7EB" stroke-width="0.5" stroke-dasharray="4"/>
+              <text x="40" y="143" text-anchor="end" font-size="9" fill="#6B7280">3.0</text>
+              <text x="40" y="103" text-anchor="end" font-size="9" fill="#6B7280">3.5</text>
+              <text x="40" y="63" text-anchor="end" font-size="9" fill="#6B7280">4.0</text>
+              <text x="40" y="23" text-anchor="end" font-size="9" fill="#6B7280">4.5</text>
+              <text x="117" y="155" text-anchor="middle" font-size="9" fill="#6B7280">Sem.1 '25</text>
+              <text x="210" y="155" text-anchor="middle" font-size="9" fill="#6B7280">Sem.2 '25</text>
+              <text x="303" y="155" text-anchor="middle" font-size="9" fill="#6B7280">Sem.1 '26</text>
+              <polyline points="117,100 210,80 303,52" fill="none" stroke="#1F2937" stroke-width="2"/>
+              <circle cx="117" cy="100" r="4" fill="#1F2937"/><circle cx="210" cy="80" r="4" fill="#1F2937"/><circle cx="303" cy="52" r="4" fill="#1F2937"/>
+              <text x="117" y="93" text-anchor="middle" font-size="10" fill="#1F2937" font-weight="700">3.5</text>
+              <text x="210" y="73" text-anchor="middle" font-size="10" fill="#1F2937" font-weight="700">3.8</text>
+              <text x="303" y="45" text-anchor="middle" font-size="10" fill="#1F2937" font-weight="700">4.1</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="grid-2 mb-24">
+          <div class="card">
+            <div class="card-title mb-16">Radar Chart Rata-rata AKHLAK</div>
+            <svg viewBox="0 0 300 260" style="width:100%; max-width:280px; margin:0 auto; display:block;">
+              <polygon points="150,30 250,80 250,180 150,230 50,180 50,80" fill="none" stroke="#D1D5DB" stroke-width="1"/>
+              <polygon points="150,60 220,95 220,165 150,200 80,165 80,95" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+              <polygon points="150,55 235,88 240,172 150,215 65,175 55,82" fill="#D1D5DB" fill-opacity="0.4" stroke="#4B5563" stroke-width="1.5"/>
+              <text x="150" y="22" text-anchor="middle" font-size="10" fill="#1F2937" font-weight="600">Amanah (4.2)</text>
+              <text x="260" y="78" text-anchor="start" font-size="10" fill="#1F2937">Kompeten (3.9)</text>
+              <text x="260" y="185" text-anchor="start" font-size="10" fill="#1F2937">Harmonis (4.4)</text>
+              <text x="150" y="248" text-anchor="middle" font-size="10" fill="#1F2937">Loyal (4.1)</text>
+              <text x="40" y="185" text-anchor="end" font-size="10" fill="#1F2937">Adaptif (3.7)</text>
+              <text x="40" y="78" text-anchor="end" font-size="10" fill="#1F2937">Kolaboratif (4.3)</text>
+            </svg>
+          </div>
+          <div class="card">
+            <div class="card-title mb-16">Top 5 & Bottom 5 Performers</div>
+            <div class="text-xs font-bold text-muted mb-8">TOP 5</div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">1.</span><span class="avatar avatar-sm">YK</span><div class="team-info"><div class="team-name">Yoga Kameswara</div><div class="team-sub">Operasi</div></div><strong>4.8</strong></div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">2.</span><span class="avatar avatar-sm">WA</span><div class="team-info"><div class="team-name">Wiranu Adji S.</div><div class="team-sub">Keuangan</div></div><strong>4.6</strong></div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">3.</span><span class="avatar avatar-sm">RP</span><div class="team-info"><div class="team-name">Rina Permatasari</div><div class="team-sub">SDM</div></div><strong>4.4</strong></div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">4.</span><span class="avatar avatar-sm">AA</span><div class="team-info"><div class="team-name">Akhmad Azmi A.</div><div class="team-sub">SDM</div></div><strong>4.2</strong></div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">5.</span><span class="avatar avatar-sm">SN</span><div class="team-info"><div class="team-name">Siti Nurhaliza</div><div class="team-sub">Keuangan</div></div><strong>4.1</strong></div>
+            <div style="border-top:1px solid #D1D5DB; margin:12px 0;"></div>
+            <div class="text-xs font-bold text-muted mb-8">BOTTOM 5</div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">1.</span><span class="avatar avatar-sm">FN</span><div class="team-info"><div class="team-name">Fajar Nugroho</div><div class="team-sub">Pemasaran</div></div><strong>3.2</strong></div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">2.</span><span class="avatar avatar-sm">AR</span><div class="team-info"><div class="team-name">Ahmad Rizky P.</div><div class="team-sub">IT</div></div><strong>3.5</strong></div>
+            <div class="team-row"><span style="font-weight:700; width:24px;">3.</span><span class="avatar avatar-sm">BS</span><div class="team-info"><div class="team-name">Budi Santoso</div><div class="team-sub">Operasi</div></div><strong>3.7</strong></div>
+          </div>
+        </div>
+
+        <!-- Summary Table -->
+        <div class="card">
+          <div class="card-title mb-16">Ringkasan per Unit Kerja</div>
+          <table><thead><tr><th>Unit Kerja</th><th>Jumlah</th><th>Avg Skor</th><th>Gap Tertinggi</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Operasi</td><td>52</td><td>4.3</td><td>0.2</td><td><span class="badge badge-dark">Selesai</span></td></tr>
+              <tr><td>Keuangan</td><td>45</td><td>4.1</td><td>0.4</td><td><span class="badge badge-dark">Selesai</span></td></tr>
+              <tr><td>SDM</td><td>38</td><td>4.4</td><td>0.1</td><td><span class="badge badge-dark">Selesai</span></td></tr>
+              <tr><td>IT</td><td>50</td><td>3.9</td><td>0.5</td><td><span class="badge">Proses</span></td></tr>
+              <tr><td>Pemasaran</td><td>45</td><td>3.7</td><td>0.6</td><td><span class="badge">Proses</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

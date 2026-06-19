@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Atasan</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="atasan" data-page="dashboard">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+
+        <div class="welcome-bar">
+          <div class="welcome-title">Selamat Datang, Budi Santoso</div>
+          <div class="welcome-sub">Periode: Semester 1 2026 | Sisa 5 hari</div>
+        </div>
+
+        <div class="stat-cards cols-3 mb-24">
+          <div class="stat-card"><div class="stat-label">Total Bawahan</div><div class="stat-value">12</div></div>
+          <div class="stat-card"><div class="stat-label">Sudah Dinilai</div><div class="stat-value">8</div></div>
+          <div class="stat-card"><div class="stat-label">Belum Dinilai</div><div class="stat-value">4</div></div>
+        </div>
+
+        <div class="grid-60-40">
+          <div class="card">
+            <div class="card-title mb-16">Progres Penilaian Tim</div>
+            <div class="team-row"><span class="avatar avatar-sm">AA</span><div class="team-info"><div class="team-name">Akhmad Azmi A.</div><div class="team-sub">SDM — Staff</div></div><div class="team-progress"><div class="progress-bar"><div class="progress-fill" style="width:100%;"></div></div></div><div class="team-status"><span class="badge badge-dark">Selesai</span></div></div>
+            <div class="team-row"><span class="avatar avatar-sm">SN</span><div class="team-info"><div class="team-name">Siti Nurhaliza</div><div class="team-sub">Keuangan — Analyst</div></div><div class="team-progress"><div class="progress-bar"><div class="progress-fill" style="width:100%;"></div></div></div><div class="team-status"><span class="badge badge-dark">Selesai</span></div></div>
+            <div class="team-row"><span class="avatar avatar-sm">HW</span><div class="team-info"><div class="team-name">Hendra Wijaya</div><div class="team-sub">IT — Staff</div></div><div class="team-progress"><div class="progress-bar"><div class="progress-fill" style="width:60%;"></div></div></div><div class="team-status"><span class="badge">Proses</span></div></div>
+            <div class="team-row"><span class="avatar avatar-sm">DS</span><div class="team-info"><div class="team-name">Dewi Sartika</div><div class="team-sub">Pemasaran — Staff</div></div><div class="team-progress"><div class="progress-bar"><div class="progress-fill" style="width:0%;"></div></div></div><div class="team-status"><span class="badge" style="border-color:#991B1B; color:#991B1B;">Belum</span></div></div>
+            <div class="team-row"><span class="avatar avatar-sm">FN</span><div class="team-info"><div class="team-name">Fajar Nugroho</div><div class="team-sub">Pemasaran — Supervisor</div></div><div class="team-progress"><div class="progress-bar"><div class="progress-fill" style="width:0%;"></div></div></div><div class="team-status"><span class="badge" style="border-color:#991B1B; color:#991B1B;">Belum</span></div></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Approval Pending</div>
+              <span class="badge" style="border-color:#92400E; color:#92400E;">3 menunggu</span>
+            </div>
+            <div class="team-row"><span class="avatar avatar-sm">SN</span><div class="team-info"><div class="team-name">Siti Nurhaliza</div><div class="team-sub">5 peer</div></div><div style="display:flex; gap:4px;"><button class="btn btn-sm btn-dark">Approve</button><button class="btn btn-sm btn-danger">Tolak</button></div></div>
+            <div class="team-row"><span class="avatar avatar-sm">HW</span><div class="team-info"><div class="team-name">Hendra Wijaya</div><div class="team-sub">4 peer</div></div><div style="display:flex; gap:4px;"><button class="btn btn-sm btn-dark">Approve</button><button class="btn btn-sm btn-danger">Tolak</button></div></div>
+            <div class="team-row"><span class="avatar avatar-sm">DS</span><div class="team-info"><div class="team-name">Dewi Sartika</div><div class="team-sub">5 peer</div></div><div style="display:flex; gap:4px;"><button class="btn btn-sm btn-dark">Approve</button><button class="btn btn-sm btn-danger">Tolak</button></div></div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

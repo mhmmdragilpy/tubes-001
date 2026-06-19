@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export Report — Manajemen</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="manajemen" data-page="export">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">Export Report Penilaian</h1></div>
+        <div class="card mb-24">
+          <div class="card-title mb-16">Konfigurasi Report</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div class="form-group"><label class="form-label">Periode</label><select class="form-select"><option>Semester 1 — 2026</option><option>Semester 2 — 2025</option></select></div>
+            <div class="form-group"><label class="form-label">Divisi</label><select class="form-select"><option>Semua Divisi</option><option>Operasi</option><option>Keuangan</option><option>SDM</option><option>IT</option><option>Pemasaran</option></select></div>
+            <div class="form-group"><label class="form-label">Format</label><select class="form-select"><option>PDF</option><option>Excel</option><option>CSV</option></select></div>
+            <div class="form-group"><label class="form-label">Cakupan</label><select class="form-select"><option>Seluruh Perusahaan</option><option>Per Divisi</option><option>Per Individu</option></select></div>
+          </div>
+          <div class="checkbox-group mt-16">
+            <label class="checkbox-label"><input type="checkbox" checked> Sertakan Grafik</label>
+            <label class="checkbox-label"><input type="checkbox" checked> Sertakan Gap Analysis</label>
+            <label class="checkbox-label"><input type="checkbox"> Sertakan IDP</label>
+          </div>
+          <button class="btn btn-dark mt-16" style="width:100%; justify-content:center; padding:12px;">Generate Report</button>
+        </div>
+
+        <div class="card mb-24">
+          <div class="card-title mb-16">Preview Laporan</div>
+          <div class="preview-box">
+            <div class="preview-title">PREVIEW LAPORAN</div>
+            <div style="margin-top:8px;">Laporan Penilaian 360° Core Values AKHLAK</div>
+            <div>PT Energi Nusantara — Semester 1 2026</div>
+            <div style="margin-top:20px; border:1px dashed #D1D5DB; padding:24px; width:80%;">
+              <div style="font-size:12px; color:#9CA3AF;">[ Ringkasan Eksekutif ]</div>
+              <div style="margin-top:12px; font-size:12px; color:#9CA3AF;">[ Tabel Skor per Divisi ]</div>
+              <div style="margin-top:12px; font-size:12px; color:#9CA3AF;">[ Grafik Radar AKHLAK ]</div>
+              <div style="margin-top:12px; font-size:12px; color:#9CA3AF;">[ Gap Analysis Summary ]</div>
+              <div style="margin-top:12px; font-size:12px; color:#9CA3AF;">[ Top & Bottom Performers ]</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px;">
+          <button class="btn btn-dark" style="flex:1; justify-content:center; padding:12px;">📥 Download Report</button>
+          <button class="btn btn-outline" style="justify-content:center; padding:12px;">📧 Kirim via Email</button>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Peer — Admin HR</title>
+  <link rel="stylesheet" href="../css/hifi.css">
+</head>
+<body data-role="admin-hr" data-page="peer">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="page-header">
+          <h1 class="page-title">Manajemen Penilai (Peer List)</h1>
+          <div class="page-actions">
+            <button class="btn btn-outline">Generate Otomatis</button>
+            <button class="btn btn-primary">Tambah Mapping</button>
+          </div>
+        </div>
+
+        <div class="stat-cards cols-3">
+          <div class="stat-card">
+            <div class="stat-label">Total Karyawan</div>
+            <div class="stat-value">245</div>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-label">Sudah Lengkap (Min. 3 Peer)</div>
+            <div class="stat-value">210</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-label">Perlu Review</div>
+            <div class="stat-value">35</div>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="form-input-icon" style="flex:1;">
+            <span class="input-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></span>
+            <input type="text" class="form-input" placeholder="Cari nama yang dinilai...">
+          </div>
+          <select class="form-select"><option>Semua Status</option><option>Lengkap</option><option>Kurang</option></select>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Karyawan (Dinilai)</th><th>Daftar Penilai (Atasan, Peer, Bawahan)</th><th>Jumlah</th><th>Status</th><th>Aksi</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><div style="display:flex; align-items:center; gap:12px;"><span class="avatar avatar-sm">SN</span><div><div style="font-weight:600;">Siti Nurhaliza</div><div class="text-xs text-muted">Keuangan — Analyst</div></div></div></td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <span class="badge badge-primary">Ahmad Yani (Atasan)</span>
+                    <span class="badge badge-outline">Dewi Sartika (Peer)</span>
+                    <span class="badge badge-outline">Fajar N. (Peer)</span>
+                  </div>
+                </td>
+                <td><span style="font-weight:600;">3</span>/5</td>
+                <td><span class="badge badge-success">Lengkap</span></td>
+                <td><button class="btn btn-sm btn-outline">Edit</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex; align-items:center; gap:12px;"><span class="avatar avatar-sm">BS</span><div><div style="font-weight:600;">Budi Santoso</div><div class="text-xs text-muted">Operasi — Manager</div></div></div></td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <span class="badge badge-primary">Dir. Operasi (Atasan)</span>
+                    <span class="badge badge-outline">Yoga K. (Bawahan)</span>
+                  </div>
+                </td>
+                <td><span style="font-weight:600; color:var(--danger);">2</span>/5</td>
+                <td><span class="badge badge-danger">Kurang</span></td>
+                <td><button class="btn btn-sm btn-outline">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination"><span class="pagination-info">Menampilkan 1-2 dari 245 data</span><div class="pagination-buttons"><div class="page-btn">&lt;</div><div class="page-btn active">1</div><div class="page-btn">2</div><div class="page-btn">&gt;</div></div></div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

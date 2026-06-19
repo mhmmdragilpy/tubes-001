@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Karyawan — Admin HR</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="admin-hr" data-page="karyawan">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+
+        <div class="page-header">
+          <h1 class="page-title">Manajemen Data Karyawan</h1>
+          <div class="page-actions">
+            <button class="btn btn-outline">↑ Import CSV</button>
+            <button class="btn btn-dark">+ Tambah Karyawan</button>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <select class="form-select">
+            <option>Semua Divisi</option>
+            <option>Operasi</option>
+            <option>Keuangan</option>
+            <option>SDM</option>
+            <option>IT</option>
+            <option>Pemasaran</option>
+          </select>
+          <select class="form-select">
+            <option>Semua Jabatan</option>
+            <option>Manager</option>
+            <option>Supervisor</option>
+            <option>Staff</option>
+            <option>Analyst</option>
+          </select>
+          <select class="form-select">
+            <option>Status: Aktif</option>
+            <option>Status: Nonaktif</option>
+            <option>Semua Status</option>
+          </select>
+          <input type="text" class="form-input" placeholder="Cari nama atau NIP..." style="min-width:200px;">
+          <button class="btn btn-dark">Filter</button>
+          <button class="btn btn-outline">Reset</button>
+        </div>
+
+        <!-- Data Table -->
+        <div class="card">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>NIP</th>
+                  <th>Nama Lengkap</th>
+                  <th>Jabatan</th>
+                  <th>Divisi</th>
+                  <th>Atasan Langsung</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>102012330383</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">YK</span> Yoga Kameswara</td>
+                  <td>Manager</td>
+                  <td>Operasi</td>
+                  <td>Direktur Operasi</td>
+                  <td><span class="badge">Aktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>102012330096</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">WA</span> Wiranu Adji Setiawan</td>
+                  <td>Supervisor</td>
+                  <td>Keuangan</td>
+                  <td>Budi Santoso</td>
+                  <td><span class="badge">Aktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>102012300262</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">AA</span> Akhmad Azmi Aulia</td>
+                  <td>Staff</td>
+                  <td>SDM</td>
+                  <td>Rina Permatasari</td>
+                  <td><span class="badge">Aktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>102012330401</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">SN</span> Siti Nurhaliza</td>
+                  <td>Analyst</td>
+                  <td>Keuangan</td>
+                  <td>Wiranu Adji S.</td>
+                  <td><span class="badge">Aktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>102012330512</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">HW</span> Hendra Wijaya</td>
+                  <td>Staff</td>
+                  <td>IT</td>
+                  <td>Ahmad Rizky P.</td>
+                  <td><span class="badge">Aktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>102012330245</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">DS</span> Dewi Sartika</td>
+                  <td>Staff</td>
+                  <td>Pemasaran</td>
+                  <td>Fajar Nugroho</td>
+                  <td><span class="badge">Aktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>102012330178</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">RP</span> Rina Permatasari</td>
+                  <td>Manager</td>
+                  <td>SDM</td>
+                  <td>Direktur SDM</td>
+                  <td><span class="badge">Aktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>102012330623</td>
+                  <td style="display:flex; align-items:center; gap:8px;"><span class="avatar avatar-sm">FN</span> Fajar Nugroho</td>
+                  <td>Supervisor</td>
+                  <td>Pemasaran</td>
+                  <td>Yoga Kameswara</td>
+                  <td><span class="badge badge-outline" style="color:#991B1B; border-color:#991B1B;">Nonaktif</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline">Edit</button>
+                    <button class="btn btn-sm btn-outline">Hapus</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <span class="pagination-info">Menampilkan 1-8 dari 245 karyawan</span>
+            <div class="pagination-buttons">
+              <div class="page-btn">&lt;</div>
+              <div class="page-btn active">1</div>
+              <div class="page-btn">2</div>
+              <div class="page-btn">3</div>
+              <div class="page-btn">...</div>
+              <div class="page-btn">31</div>
+              <div class="page-btn">&gt;</div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

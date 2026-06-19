@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Atasan</title>
+  <link rel="stylesheet" href="../css/hifi.css">
+</head>
+<body data-role="atasan" data-page="dashboard">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="welcome-bar">
+          <div class="welcome-title">Selamat Datang, Budi Santoso</div>
+          <div class="welcome-sub">Periode Penilaian AKHLAK: Semester 1 2026 | Sisa Waktu: 5 Hari</div>
+        </div>
+
+        <div class="stat-cards cols-3 mb-24">
+          <div class="stat-card primary">
+            <div class="stat-label">Total Bawahan Langsung</div>
+            <div class="stat-value">12</div>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-label">Penilaian Selesai</div>
+            <div class="stat-value">8</div>
+            <div class="stat-sub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg> 66% selesai</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-label">Belum Dinilai</div>
+            <div class="stat-value">4</div>
+            <div class="stat-sub negative"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Mendekati deadline</div>
+          </div>
+        </div>
+
+        <div class="grid-60-40">
+          <!-- Tim Progress -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Progres Penilaian Tim (Bawahan)</div>
+              <button class="btn btn-sm btn-outline">Lihat Semua</button>
+            </div>
+            
+            <div class="team-row">
+              <span class="avatar avatar-sm">AA</span>
+              <div class="team-info">
+                <div class="team-name">Akhmad Azmi A.</div><div class="team-sub">SDM — Staff</div>
+              </div>
+              <div style="flex:1; max-width:150px; margin:0 16px;">
+                <div class="progress-bar"><div class="progress-fill" style="width:100%; background:var(--success);"></div></div>
+              </div>
+              <span class="badge badge-success">Selesai</span>
+            </div>
+            
+            <div class="team-row">
+              <span class="avatar avatar-sm">HW</span>
+              <div class="team-info">
+                <div class="team-name">Hendra Wijaya</div><div class="team-sub">IT — Staff</div>
+              </div>
+              <div style="flex:1; max-width:150px; margin:0 16px;">
+                <div class="progress-bar"><div class="progress-fill" style="width:60%;"></div></div>
+              </div>
+              <span class="badge badge-warning">Proses</span>
+            </div>
+            
+            <div class="team-row">
+              <span class="avatar avatar-sm">DS</span>
+              <div class="team-info">
+                <div class="team-name">Dewi Sartika</div><div class="team-sub">Pemasaran — Staff</div>
+              </div>
+              <div style="flex:1; max-width:150px; margin:0 16px;">
+                <div class="progress-bar"><div class="progress-fill" style="width:0%;"></div></div>
+              </div>
+              <span class="badge badge-danger">Belum</span>
+            </div>
+            
+            <button class="btn btn-primary mt-16" style="width:100%; justify-content:center;">Lanjutkan Penilaian (4 tersisa)</button>
+          </div>
+
+          <!-- Approval Pending -->
+          <div class="card">
+            <div class="card-header" style="margin-bottom:12px;">
+              <div class="card-title">Approval Peer</div>
+              <span class="badge badge-warning">3 Menunggu</span>
+            </div>
+            <div class="text-sm text-muted mb-16">Daftar bawahan yang mengajukan penilai peer.</div>
+            
+            <div class="team-row" style="padding:12px 0;">
+              <span class="avatar avatar-sm">SN</span>
+              <div class="team-info"><div class="team-name">Siti Nurhaliza</div><div class="team-sub">Mengajukan 5 peer</div></div>
+              <div style="display:flex; gap:4px;">
+                <button class="btn btn-sm btn-outline" style="color:var(--success); border-color:var(--success); padding:4px 8px;">✓</button>
+                <button class="btn btn-sm btn-outline" style="color:var(--danger); border-color:var(--danger); padding:4px 8px;">✕</button>
+              </div>
+            </div>
+            
+            <div class="team-row" style="padding:12px 0;">
+              <span class="avatar avatar-sm">HW</span>
+              <div class="team-info"><div class="team-name">Hendra Wijaya</div><div class="team-sub">Mengajukan 4 peer</div></div>
+              <div style="display:flex; gap:4px;">
+                <button class="btn btn-sm btn-outline" style="color:var(--success); border-color:var(--success); padding:4px 8px;">✓</button>
+                <button class="btn btn-sm btn-outline" style="color:var(--danger); border-color:var(--danger); padding:4px 8px;">✕</button>
+              </div>
+            </div>
+            
+            <div class="mt-16 text-center"><a href="approval.html" class="text-sm" style="font-weight:600;">Lihat Semua Approval →</a></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

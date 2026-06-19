@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Penilaian — Karyawan</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="karyawan" data-page="hasil">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">Hasil Penilaian — Semester 1 2026</h1><button class="btn btn-outline">📄 Download PDF</button></div>
+
+        <!-- Overall Score -->
+        <div class="card mb-24" style="border-left:3px solid #4B5563;">
+          <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+            <div style="text-align:center;">
+              <div class="donut-chart" style="width:110px; height:110px; background: conic-gradient(#4B5563 0% 82%, #E5E7EB 82% 100%);">
+                <div class="donut-inner" style="width:72px; height:72px;">
+                  <div class="donut-value" style="font-size:22px;">4.1</div>
+                  <div class="donut-label">/5.0</div>
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:14px; font-weight:700; color:#1F2937; margin-bottom:12px;">Rincian per Sumber:</div>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <div class="h-bar-item"><span class="h-bar-label">Atasan (40%)</span><div class="h-bar-track"><div class="h-bar-fill" style="width:86%;"></div></div><span class="h-bar-value">4.3</span></div>
+                <div class="h-bar-item"><span class="h-bar-label">Peer (20%)</span><div class="h-bar-track"><div class="h-bar-fill" style="width:78%;"></div></div><span class="h-bar-value">3.9</span></div>
+                <div class="h-bar-item"><span class="h-bar-label">Bawahan (30%)</span><div class="h-bar-track"><div class="h-bar-fill" style="width:84%;"></div></div><span class="h-bar-value">4.2</span></div>
+                <div class="h-bar-item"><span class="h-bar-label">Self (10%)</span><div class="h-bar-track"><div class="h-bar-fill" style="width:80%;"></div></div><span class="h-bar-value">4.0</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2 mb-24">
+          <!-- Skor per AKHLAK -->
+          <div class="card">
+            <div class="card-title mb-16">Skor per Nilai AKHLAK</div>
+            <div class="h-bar-chart">
+              <div class="h-bar-item"><span class="h-bar-label">Amanah</span><div class="h-bar-track"><div class="h-bar-fill" style="width:84%;"></div></div><span class="h-bar-value">4.2</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Kompeten</span><div class="h-bar-track"><div class="h-bar-fill" style="width:76%;"></div></div><span class="h-bar-value">3.8</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Harmonis</span><div class="h-bar-track"><div class="h-bar-fill" style="width:90%;"></div></div><span class="h-bar-value">4.5</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Loyal</span><div class="h-bar-track"><div class="h-bar-fill" style="width:82%;"></div></div><span class="h-bar-value">4.1</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Adaptif</span><div class="h-bar-track"><div class="h-bar-fill" style="width:74%;"></div></div><span class="h-bar-value">3.7</span></div>
+              <div class="h-bar-item"><span class="h-bar-label">Kolaboratif</span><div class="h-bar-track"><div class="h-bar-fill" style="width:86%;"></div></div><span class="h-bar-value">4.3</span></div>
+            </div>
+          </div>
+
+          <!-- Gap Analysis -->
+          <div class="card">
+            <div class="card-title mb-16">Gap Analysis — Self vs Others</div>
+            <table>
+              <thead><tr><th>Nilai AKHLAK</th><th>Self</th><th>Others</th><th>Gap</th></tr></thead>
+              <tbody>
+                <tr><td>Amanah</td><td>4.0</td><td>4.2</td><td>0.2</td></tr>
+                <tr><td>Kompeten</td><td>4.2</td><td>3.8</td><td>0.4</td></tr>
+                <tr><td>Harmonis</td><td>4.3</td><td>4.5</td><td>0.2</td></tr>
+                <tr><td>Loyal</td><td>4.0</td><td>4.1</td><td>0.1</td></tr>
+                <tr style="background:#F3F4F6;"><td><strong>Adaptif</strong></td><td>4.5</td><td>3.7</td><td><strong style="color:#991B1B;">0.8 ⚠</strong></td></tr>
+                <tr style="background:#F3F4F6;"><td><strong>Kolaboratif</strong></td><td>4.9</td><td>4.3</td><td><strong style="color:#991B1B;">0.6 ⚠</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="text-xs text-muted mt-16">⚠ Gap > 0.5 menandakan perbedaan signifikan antara persepsi diri dan penilaian orang lain</div>
+          </div>
+        </div>
+
+        <!-- Feedback -->
+        <div class="card">
+          <div class="card-title mb-16">Feedback Anonim dari Penilai</div>
+          <div class="comment-card"><div class="comment-header">Penilai #1 (Peer) — Harmonis</div><div class="comment-body">Sangat baik dalam menghargai pendapat rekan kerja dan menjaga hubungan profesional.</div></div>
+          <div class="comment-card"><div class="comment-header">Penilai #2 (Atasan) — Adaptif</div><div class="comment-body">Perlu meningkatkan kemampuan adaptasi terhadap perubahan kebijakan dan prosedur baru.</div></div>
+          <div class="comment-card"><div class="comment-header">Penilai #3 (Peer) — Amanah</div><div class="comment-body">Konsisten dalam menyelesaikan tugas tepat waktu dan dapat dipercaya.</div></div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

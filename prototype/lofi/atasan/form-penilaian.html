@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Penilaian — Atasan</title>
+  <link rel="stylesheet" href="../css/lofi.css">
+</head>
+<body data-role="atasan" data-page="form-penilaian">
+  <div class="app-layout">
+    <div id="sidebar"></div>
+    <div class="main-wrapper">
+      <div id="topbar"></div>
+      <main class="main-content">
+
+        <!-- Info Card -->
+        <div class="card mb-24">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div>
+              <div style="font-size:16px; font-weight:700; color:#1F2937;">Penilaian untuk: Ahmad Rizky Pratama</div>
+              <div class="chips">
+                <span class="chip">Divisi: Operasi</span>
+                <span class="chip">Jabatan: Staff</span>
+                <span class="chip">Hubungan: Bawahan</span>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div class="text-sm text-muted">Batas: 14/04/2026</div>
+              <span class="badge" style="border-color:#92400E; color:#92400E;">Sisa 5 hari</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step Indicator -->
+        <div class="steps mb-24">
+          <div class="step"><div class="step-wrapper"><div class="step-circle active">1</div><div class="step-label">Amanah</div></div></div>
+          <div class="step-line"></div>
+          <div class="step"><div class="step-wrapper"><div class="step-circle">2</div><div class="step-label">Kompeten</div></div></div>
+          <div class="step-line"></div>
+          <div class="step"><div class="step-wrapper"><div class="step-circle">3</div><div class="step-label">Harmonis</div></div></div>
+          <div class="step-line"></div>
+          <div class="step"><div class="step-wrapper"><div class="step-circle">4</div><div class="step-label">Loyal</div></div></div>
+          <div class="step-line"></div>
+          <div class="step"><div class="step-wrapper"><div class="step-circle">5</div><div class="step-label">Adaptif</div></div></div>
+          <div class="step-line"></div>
+          <div class="step"><div class="step-wrapper"><div class="step-circle">6</div><div class="step-label">Kolaboratif</div></div></div>
+        </div>
+
+        <!-- Form -->
+        <div class="card mb-24">
+          <div class="card-title">Amanah</div>
+          <div class="card-subtitle mb-16" style="font-style:italic;">Memegang teguh kepercayaan yang diberikan</div>
+
+          <div class="question-card">
+            <div class="question-number">Pertanyaan 1 dari 5</div>
+            <div class="question-text">Seberapa sering karyawan ini menyelesaikan tugas sesuai deadline yang diberikan?</div>
+            <div class="radio-scale">
+              <div class="radio-option"><div class="radio-circle"></div>1<br><span class="text-xs">Sangat Kurang</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>2<br><span class="text-xs">Kurang</span></div>
+              <div class="radio-option selected"><div class="radio-circle"></div>3<br><span class="text-xs">Cukup</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>4<br><span class="text-xs">Baik</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>5<br><span class="text-xs">Sangat Baik</span></div>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-number">Pertanyaan 2 dari 5</div>
+            <div class="question-text">Seberapa baik karyawan bertanggung jawab terhadap hasil pekerjaannya?</div>
+            <div class="radio-scale">
+              <div class="radio-option"><div class="radio-circle"></div>1<br><span class="text-xs">Sangat Kurang</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>2<br><span class="text-xs">Kurang</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>3<br><span class="text-xs">Cukup</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>4<br><span class="text-xs">Baik</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>5<br><span class="text-xs">Sangat Baik</span></div>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-number">Pertanyaan 3 dari 5</div>
+            <div class="question-text">Seberapa baik karyawan menjaga kerahasiaan data dan informasi perusahaan?</div>
+            <div class="radio-scale">
+              <div class="radio-option"><div class="radio-circle"></div>1<br><span class="text-xs">Sangat Kurang</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>2<br><span class="text-xs">Kurang</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>3<br><span class="text-xs">Cukup</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>4<br><span class="text-xs">Baik</span></div>
+              <div class="radio-option"><div class="radio-circle"></div>5<br><span class="text-xs">Sangat Baik</span></div>
+            </div>
+          </div>
+
+          <div class="form-group mt-16">
+            <label class="form-label">Catatan tambahan (opsional)</label>
+            <textarea class="form-textarea" placeholder="Tulis catatan atau komentar..."></textarea>
+          </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-bar">
+          <button class="btn btn-outline" disabled>← Sebelumnya</button>
+          <span class="bottom-bar-center">1 / 6 Nilai</span>
+          <button class="btn btn-dark">Selanjutnya →</button>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script src="../js/components.js"></script>
+</body>
+</html>
