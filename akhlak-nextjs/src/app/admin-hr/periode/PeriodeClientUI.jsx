@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { createPeriode, tutupPeriode } from './actions';
-import { FiPlus } from 'react-icons/fi';
+import { createPeriode, tutupPeriode, updatePeriode } from './actions';
+import { FiPlus, FiEdit2 } from 'react-icons/fi';
 
 export function AddPeriodeButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -118,6 +118,60 @@ export function DetailPeriodeButton({ periode }) {
             <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: '24px'}}>
               <button type="button" className="btn btn-primary" onClick={() => setIsOpen(false)}>Tutup</button>
             </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+export function EditPeriodeButton({ periode }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [startDate, setStartDate] = useState(periode.tanggal_mulai ? new Date(periode.tanggal_mulai).toISOString().split('T')[0] : '');
+  const [endDate, setEndDate] = useState(periode.tanggal_selesai ? new Date(periode.tanggal_selesai).toISOString().split('T')[0] : '');
+
+  const handleStartDateChange = (e) => {
+    const val = e.target.value;
+    setStartDate(val);
+    if (val) {
+      const date = new Date(val);
+      date.setMonth(date.getMonth() + 6);
+      setEndDate(date.toISOString().split('T')[0]);
+    } else {
+      setEndDate('');
+    }
+  };
+
+  return (
+    <>
+      <button className="btn btn-sm btn-outline" onClick={() => setIsOpen(true)}>Edit</button>
+
+      {isOpen && (
+        <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div className="card" style={{width: '400px'}}>
+            <h3 className="mb-16">Edit Periode Aktif</h3>
+            <form action={async (formData) => {
+              const res = await updatePeriode(periode.id, formData);
+              if(res.success) setIsOpen(false);
+              else alert('Error: ' + res.message);
+            }}>
+              <div className="form-group">
+                <label className="form-label">Nama Periode</label>
+                <input type="text" name="nama_periode" className="form-input" required defaultValue={periode.nama_periode} />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Tanggal Mulai</label>
+                <input type="date" name="tanggal_mulai" className="form-input" required value={startDate} onChange={handleStartDateChange} />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Tanggal Selesai</label>
+                <input type="date" name="tanggal_selesai" className="form-input" required value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+              </div>
+              <div style={{display: 'flex', gap: '12px', justifyContent: 'flex-end', marginTop: '24px'}}>
+                <button type="button" className="btn btn-outline" onClick={() => setIsOpen(false)}>Batal</button>
+                <button type="submit" className="btn btn-primary">Simpan Perubahan</button>
+              </div>
+            </form>
           </div>
         </div>
       )}

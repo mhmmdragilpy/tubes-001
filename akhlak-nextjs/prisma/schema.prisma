@@ -16,6 +16,7 @@ model User {
   jabatan       String    @db.VarChar(50)
   role          Role
   atasan_id     Int?
+  avatar_url    String?   @db.VarChar(255)
   created_at    DateTime? @default(now()) @db.Timestamp(0)
 
   atasan        User?     @relation("Bawahan", fields: [atasan_id], references: [id])

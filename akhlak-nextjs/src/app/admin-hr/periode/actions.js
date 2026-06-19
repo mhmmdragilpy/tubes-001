@@ -31,6 +31,28 @@ export async function createPeriode(formData) {
   }
 }
 
+export async function updatePeriode(id, formData) {
+  const nama = formData.get('nama_periode');
+  const start = formData.get('tanggal_mulai');
+  const end = formData.get('tanggal_selesai');
+
+  try {
+    await prisma.periode.update({
+      where: { id: parseInt(id) },
+      data: {
+        nama_periode: nama,
+        tanggal_mulai: new Date(start),
+        tanggal_selesai: new Date(end)
+      }
+    });
+
+    revalidatePath('/admin-hr/periode');
+    return { success: true };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+}
+
 export async function tutupPeriode(id) {
   try {
     await prisma.periode.update({

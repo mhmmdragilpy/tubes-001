@@ -22,8 +22,7 @@ export default function LoginPage() {
     if (res.success) {
       // Save minimal auth info to localStorage so layout can read it
       localStorage.setItem('auth_user', JSON.stringify(res.user));
-      // Set cookie for Server Components
-      document.cookie = `userId=${res.user.id}; path=/; max-age=86400`;
+      // Cookies are now securely set by the server action
       
       // Redirect based on role
       router.push(`/${res.role}/dashboard`);
@@ -63,6 +62,29 @@ export default function LoginPage() {
               {error}
             </div>
           )}
+
+          <div className="form-group" style={{ marginBottom: '24px' }}>
+            <label className="form-label" style={{color: 'var(--primary)', fontWeight: 600}}>⚡ Quick Login (Dev Mode)</label>
+            <select 
+              className="form-input" 
+              onChange={(e) => {
+                const selectedEmail = e.target.value;
+                if (selectedEmail) {
+                  setEmail(selectedEmail);
+                  setPassword('password123');
+                }
+              }}
+              style={{ borderColor: 'var(--primary)', backgroundColor: '#eff6ff', cursor: 'pointer' }}
+            >
+              <option value="">-- Pilih Akun Testing --</option>
+              <option value="admin@energi.co.id">Admin HR (admin@energi.co.id)</option>
+              <option value="dir@energi.co.id">Manajemen (dir@energi.co.id)</option>
+              <option value="budi@energi.co.id">Atasan Operasi (budi@energi.co.id)</option>
+              <option value="anita@energi.co.id">Atasan Keuangan (anita@energi.co.id)</option>
+              <option value="yoga@energi.co.id">Karyawan 1 - Yoga (yoga@energi.co.id)</option>
+              <option value="siti@energi.co.id">Karyawan 2 - Siti (siti@energi.co.id)</option>
+            </select>
+          </div>
 
           <form onSubmit={handleLogin}>
             <div className="form-group">
@@ -106,15 +128,6 @@ export default function LoginPage() {
               {loading ? 'Memvalidasi...' : 'Masuk'}
             </button>
           </form>
-
-          <div style={{marginTop: '16px', padding: '12px', background: '#f8fafc', border: '1px dashed #cbd5e1', borderRadius: '8px', fontSize: '12px', color: '#64748b'}}>
-            <b>Info Login Database Asli:</b><br/>
-            - Admin HR: admin@energi.co.id<br/>
-            - Karyawan: siti@energi.co.id<br/>
-            - Atasan: budi@energi.co.id<br/>
-            - Manajemen: dir@energi.co.id<br/>
-            <i>Pass: password123</i>
-          </div>
 
           <div className="login-footer" style={{marginTop: '24px'}}>© 2026 PT Energi Nusantara. All rights reserved.</div>
         </div>

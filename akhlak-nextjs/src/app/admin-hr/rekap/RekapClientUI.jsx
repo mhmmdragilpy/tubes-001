@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { FiDownload, FiEdit2 } from 'react-icons/fi';
+import { FiDownload, FiEdit2, FiFileText, FiMonitor } from 'react-icons/fi';
 import { updateIndikatorUser } from './actions';
+import { exportToPDF, exportToPPTX } from '@/lib/export-utils';
 
 export function RekapClientUI({ tableData, periodes, activePeriodeId }) {
   const [filterDivisi, setFilterDivisi] = useState('');
@@ -35,7 +36,16 @@ export function RekapClientUI({ tableData, periodes, activePeriodeId }) {
     a.href = url;
     a.download = `rekap_penilaian_360.csv`;
     a.click();
+    a.click();
     URL.revokeObjectURL(url);
+  };
+
+  const handleExportPDF = () => {
+    exportToPDF(filtered, 'Rekapitulasi Penilaian AKHLAK');
+  };
+
+  const handleExportPPTX = () => {
+    exportToPPTX(filtered, 'Rekapitulasi Penilaian AKHLAK');
   };
 
   const handleEditClick = (user) => {
@@ -82,9 +92,17 @@ export function RekapClientUI({ tableData, periodes, activePeriodeId }) {
           <option value="Proses">Proses</option>
           <option value="Belum">Belum</option>
         </select>
-        <button className="btn btn-primary" style={{display: 'flex', alignItems: 'center', gap: '8px'}} onClick={exportCSV}>
-          <FiDownload size={16} /> Export CSV
-        </button>
+        <div style={{display: 'flex', gap: '8px'}}>
+          <button className="btn btn-outline" style={{display: 'flex', alignItems: 'center', gap: '8px'}} onClick={exportCSV} title="Export ke Excel/CSV">
+            <FiDownload size={16} /> CSV
+          </button>
+          <button className="btn btn-primary" style={{display: 'flex', alignItems: 'center', gap: '8px', background: '#dc2626', borderColor: '#dc2626'}} onClick={handleExportPDF} title="Export ke PDF">
+            <FiFileText size={16} /> PDF
+          </button>
+          <button className="btn btn-primary" style={{display: 'flex', alignItems: 'center', gap: '8px', background: '#d97706', borderColor: '#d97706'}} onClick={handleExportPPTX} title="Export ke PowerPoint">
+            <FiMonitor size={16} /> PPTX
+          </button>
+        </div>
       </div>
 
       <div className="card mt-24">

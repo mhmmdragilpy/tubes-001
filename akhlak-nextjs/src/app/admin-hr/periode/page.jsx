@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma';
-import { AddPeriodeButton, ClosePeriodeButton, DetailPeriodeButton } from './PeriodeClientUI';
+import { AddPeriodeButton, ClosePeriodeButton, DetailPeriodeButton, EditPeriodeButton } from './PeriodeClientUI';
 
 export const dynamic = 'force-dynamic';
 
@@ -57,7 +57,7 @@ export default async function PeriodePage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '8px' }}>
-              <button className="btn btn-sm btn-outline">Edit</button>
+              <EditPeriodeButton periode={activePeriode} />
               <ClosePeriodeButton periodeId={activePeriode.id} />
             </div>
           </div>

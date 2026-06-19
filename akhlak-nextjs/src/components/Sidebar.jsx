@@ -38,7 +38,9 @@ const MENUS = {
       { id: 'form-penilaian', label: 'Form Penilaian', path: '/atasan/form-penilaian', icon: 'form' },
       { id: 'rekap', label: 'Rekap Penilaian', path: '/atasan/rekap', icon: 'file' },
       { id: 'export', label: 'Export Laporan', path: '/atasan/export', icon: 'chart' },
+      { id: 'idp', label: 'Approval IDP', path: '/atasan/idp', icon: 'check' },
       { type: 'divider' },
+      { id: 'idp-karyawan', label: 'Rencana IDP Saya', path: '/karyawan/idp', icon: 'file' },
       { id: 'profil', label: 'Profil', path: '/atasan/profil', icon: 'person' },
       { id: 'logout', label: 'Logout', path: '/login', icon: 'logout', isLogout: true },
     ]
@@ -49,6 +51,7 @@ const MENUS = {
       { id: 'form-penilaian', label: 'Form Penilaian', path: '/karyawan/form-penilaian', icon: 'form' },
       { id: 'hasil', label: 'Hasil Penilaian', path: '/karyawan/hasil', icon: 'chart' },
       { id: 'riwayat', label: 'Riwayat', path: '/karyawan/riwayat', icon: 'periode' },
+      { id: 'idp', label: 'Rencana IDP', path: '/karyawan/idp', icon: 'file' },
       { type: 'divider' },
       { id: 'profil', label: 'Profil', path: '/karyawan/profil', icon: 'person' },
       { id: 'logout', label: 'Logout', path: '/login', icon: 'logout', isLogout: true },
@@ -70,18 +73,25 @@ const MENUS = {
 
 export default function Sidebar({ role }) {
   const pathname = usePathname();
-  const [user, setUser] = useState({ nama: 'Loading...', role: 'Loading...', initial: '?' });
+  const [user, setUser] = useState({ nama: 'Loading...', role: 'Loading...', initial: '?', avatar_url: null });
 
   useEffect(() => {
-    const savedUser = localStorage.getItem('auth_user');
-    if (savedUser) {
-      const parsed = JSON.parse(savedUser);
-      setUser({
-        nama: parsed.nama,
-        role: parsed.role,
-        initial: parsed.initial || parsed.nama.substring(0, 2).toUpperCase()
-      });
-    }
+    const loadUser = () => {
+      const savedUser = localStorage.getItem('auth_user');
+      if (savedUser) {
+        const parsed = JSON.parse(savedUser);
+        setUser({
+          nama: parsed.nama,
+          role: parsed.role,
+          initial: parsed.initial || parsed.nama.substring(0, 2).toUpperCase(),
+          avatar_url: parsed.avatar_url || null
+        });
+      }
+    };
+    
+    loadUser();
+    window.addEventListener('auth_user_updated', loadUser);
+    return () => window.removeEventListener('auth_user_updated', loadUser);
   }, []);
 
   const menu = MENUS[role] || { items: [] };
@@ -94,7 +104,11 @@ export default function Sidebar({ role }) {
       </div>
       
       <div className="sidebar-user">
-        <div className="user-avatar">{user.initial}</div>
+        {user.avatar_url ? (
+          <img src={user.avatar_url} alt="User Avatar" className="user-avatar" style={{ objectFit: 'cover', padding: 0 }} />
+        ) : (
+          <div className="user-avatar">{user.initial}</div>
+        )}
         <div className="user-info">
           <div className="user-name">{user.nama}</div>
           <div className="user-role" style={{textTransform: 'capitalize'}}>{user.role.replace('-', ' ')}</div>

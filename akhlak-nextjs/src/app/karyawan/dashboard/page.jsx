@@ -3,21 +3,37 @@ import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { FiCheck } from 'react-icons/fi';
 import { calculateUserScores } from '@/lib/score-utils';
+import { verifyToken } from '@/lib/jwt';
 
 export const dynamic = 'force-dynamic';
 
 export default async function KaryawanDashboard() {
   const cookieStore = await cookies();
-  const userIdCookie = cookieStore.get('userId');
-  const userId = userIdCookie ? parseInt(userIdCookie.value, 10) : 4; // 4 is usually Siti
+  const tokenCookie = cookieStore.get('token');
+  
+  let userId = null;
+  if (tokenCookie) {
+    const payload = await verifyToken(tokenCookie.value);
+    if (payload) userId = payload.userId;
+  }
+
+  if (!userId) {
+    // Redirect to login if not authenticated
+    return null; 
+  }
 
   const user = await prisma.user.findUnique({
     where: { id: userId }
   });
 
-  // Find tasks where this user is the penilai
+  // Find tasks where this user is the penilai AND period is active
   const penilaianTugas = await prisma.penilaian.findMany({
-    where: { penilai_id: userId },
+    where: { 
+      penilai_id: userId,
+      periode: {
+        is_active: true
+      }
+    },
     include: { dinilai: true, periode: true }
   });
 

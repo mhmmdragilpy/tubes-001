@@ -1,15 +1,22 @@
 import prisma from '@/lib/prisma';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
+import { verifyToken } from '@/lib/jwt';
 
 export async function GET() {
   try {
     const cookieStore = await cookies();
-    const userIdCookie = cookieStore.get('userId');
-    if (!userIdCookie) {
+    const tokenCookie = cookieStore.get('token');
+    
+    if (!tokenCookie) {
       return NextResponse.json({ notifications: [], unreadCount: 0 });
     }
-    const userId = parseInt(userIdCookie.value);
+
+    const payload = await verifyToken(tokenCookie.value);
+    if (!payload) {
+      return NextResponse.json({ notifications: [], unreadCount: 0 });
+    }
+    const userId = payload.userId;
 
     const notifications = await prisma.notifikasi.findMany({
       where: { user_id: userId },
@@ -33,9 +40,12 @@ export async function POST(request) {
 
     if (body.action === 'mark_read') {
       const cookieStore = await cookies();
-      const userIdCookie = cookieStore.get('userId');
-      if (!userIdCookie) return NextResponse.json({ success: false });
-      const userId = parseInt(userIdCookie.value);
+      const tokenCookie = cookieStore.get('token');
+      if (!tokenCookie) return NextResponse.json({ success: false });
+
+      const payload = await verifyToken(tokenCookie.value);
+      if (!payload) return NextResponse.json({ success: false });
+      const userId = payload.userId;
 
       await prisma.notifikasi.updateMany({
         where: { user_id: userId, is_read: false },

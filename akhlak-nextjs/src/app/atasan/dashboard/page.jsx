@@ -2,6 +2,7 @@ import prisma from '@/lib/prisma';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { calculateUserScores } from '@/lib/score-utils';
+import { verifyToken } from '@/lib/jwt';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,10 +35,18 @@ function getRadarPoints(scores) {
 
 export default async function AtasanDashboard() {
   const cookieStore = await cookies();
-  const userIdCookie = cookieStore.get('userId');
+  const tokenCookie = cookieStore.get('token');
   
-  // Default to Budi's ID from seed if not logged in (for demo purposes)
-  const userId = userIdCookie ? parseInt(userIdCookie.value, 10) : 3; // 3 is usually Budi in seed
+  let userId = null;
+  if (tokenCookie) {
+    const payload = await verifyToken(tokenCookie.value);
+    if (payload) userId = payload.userId;
+  }
+
+  if (!userId) {
+    // Redirect to login if not authenticated
+    return null; 
+  }
   
   const user = await prisma.user.findUnique({
     where: { id: userId }
@@ -51,14 +60,17 @@ export default async function AtasanDashboard() {
 
   const bawahanIds = bawahan.map(b => b.id);
   
-  // Find penilaian directed AT bawahan BY this atasan
+  // Find penilaian directed AT bawahan BY this atasan for the ACTIVE periode
   const penilaianKeBawahan = await prisma.penilaian.findMany({
     where: {
       penilai_id: userId,
       dinilai_id: { in: bawahanIds },
-      tipe_relasi: 'bawahan'
+      tipe_relasi: 'bawahan',
+      periode: {
+        is_active: true
+      }
     },
-    include: { dinilai: true }
+    include: { dinilai: true, periode: true }
   });
 
   const selesai = penilaianKeBawahan.filter(p => p.status === 'selesai').length;

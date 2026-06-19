@@ -1,19 +1,26 @@
 import { cookies } from 'next/headers';
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
+import { verifyToken } from '@/lib/jwt';
 
 export const dynamic = 'force-dynamic';
 
 export default async function FormPenilaianList() {
   const cookieStore = await cookies();
-  const userIdStr = cookieStore.get('userId')?.value;
+  const tokenCookie = cookieStore.get('token');
+  
+  let userId = null;
+  if (tokenCookie) {
+    const payload = await verifyToken(tokenCookie.value);
+    if (payload) userId = payload.userId;
+  }
 
-  if (!userIdStr) {
+  if (!userId) {
     return (
       <main className="main-content">
         <div className="card mb-24" style={{ borderLeft: '4px solid var(--danger)', backgroundColor: '#fef2f2' }}>
           <div style={{ padding: '16px 0' }}>
-            <h3 style={{color: '#991b1b', marginBottom: '8px'}}>Sesi Berakhir / Cookie Tidak Ditemukan</h3>
+            <h3 style={{color: '#991b1b', marginBottom: '8px'}}>Sesi Berakhir / Token Tidak Ditemukan</h3>
             <p style={{color: '#7f1d1d', fontSize: '14px'}}>Silakan login ulang untuk melihat daftar penilaian Anda.</p>
             <Link href="/login" className="btn btn-sm btn-primary mt-16" style={{display: 'inline-block'}}>Login Ulang</Link>
           </div>
@@ -21,8 +28,6 @@ export default async function FormPenilaianList() {
       </main>
     );
   }
-
-  const userId = parseInt(userIdStr);
 
   const assignments = await prisma.penilaian.findMany({
     where: {
