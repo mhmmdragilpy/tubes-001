@@ -27,7 +27,7 @@ export default async function ApprovalPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Approval Daftar Penilai (Peer)</h1>
+        <h1 className="page-title">Daftar peer</h1>
         <div className="page-actions">
           <span className="badge badge-warning">{pendingCount} Menunggu</span>
           <span className="badge badge-success">{approvedCount} Disetujui</span>

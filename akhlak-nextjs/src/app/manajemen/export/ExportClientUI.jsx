@@ -6,6 +6,7 @@ import { FiDownload, FiFileText } from 'react-icons/fi';
 export default function ExportPage({ periodes }) {
   const [loading, setLoading] = useState(false);
   const [downloadUrl, setDownloadUrl] = useState(null);
+  const [selectedPeriode, setSelectedPeriode] = useState(periodes[0]?.id || '');
 
   const handleGenerate = async (e) => {
     e.preventDefault();
@@ -14,7 +15,11 @@ export default function ExportPage({ periodes }) {
     try {
       // In a real app, this would hit an API endpoint that generates a PDF or PPTX
       // For now, we simulate generation and download the CSV instead as a demonstration
-      const res = await fetch('/api/export-manajemen', { method: 'POST' });
+      const res = await fetch('/api/export-manajemen', { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ periodeId: selectedPeriode })
+      });
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
@@ -39,9 +44,18 @@ export default function ExportPage({ periodes }) {
             <div className="grid-2">
               <div className="form-group">
                 <label className="form-label">Periode</label>
-                <select className="form-select">
+                <select 
+                  className="form-select" 
+                  value={selectedPeriode} 
+                  onChange={(e) => {
+                    setSelectedPeriode(e.target.value);
+                    setDownloadUrl(null);
+                  }}
+                >
                   {periodes.map(p => (
-                    <option key={p.id} value={p.id}>{p.nama_periode} ({p.tahun})</option>
+                    <option key={p.id} value={p.id}>
+                      {p.nama_periode} ({new Date(p.tanggal_mulai).getFullYear()})
+                    </option>
                   ))}
                 </select>
               </div>

@@ -59,7 +59,7 @@ export default async function DataKaryawan({ searchParams }) {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Master Data Karyawan</h1>
+        <h1 className="page-title">Manajemen Data Karyawan & Penilai</h1>
         <div className="page-actions">
           <ImportKaryawanButton />
           <AddKaryawanButton atasans={potentialAtasan} />

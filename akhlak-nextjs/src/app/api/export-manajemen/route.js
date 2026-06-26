@@ -1,9 +1,12 @@
 import { calculateAllUserScores } from '@/lib/score-utils';
 import { NextResponse } from 'next/server';
 
-export async function POST() {
+export async function POST(req) {
   try {
-    const allScores = await calculateAllUserScores();
+    const body = await req.json().catch(() => ({}));
+    const { periodeId } = body;
+    
+    const allScores = await calculateAllUserScores(periodeId ? parseInt(periodeId, 10) : null);
     
     const headers = ['Nama', 'NIP', 'Divisi', 'Jabatan', 'Amanah', 'Kompeten', 'Harmonis', 'Loyal', 'Adaptif', 'Kolaboratif', 'Skor Akhir', 'Status'];
     const rows = allScores.map(s => [

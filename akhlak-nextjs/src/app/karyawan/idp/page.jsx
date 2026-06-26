@@ -43,7 +43,7 @@ export default async function KaryawanIdpPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Individual Development Plan (IDP)</h1>
+        <h1 className="page-title">Laporan & IDP</h1>
       </div>
       
       <IdpClientUI 

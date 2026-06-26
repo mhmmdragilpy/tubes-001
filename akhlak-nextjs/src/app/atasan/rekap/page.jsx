@@ -71,7 +71,7 @@ export default async function AtasanRekapPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Rekap Penilaian Tim</h1>
+        <h1 className="page-title">Histori Penilaian</h1>
       </div>
 
       <div className="stat-cards cols-3">

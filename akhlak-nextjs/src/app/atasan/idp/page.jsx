@@ -43,7 +43,7 @@ export default async function AtasanIdpPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Approval & Monitoring IDP Bawahan</h1>
+        <h1 className="page-title">Approval IDP</h1>
       </div>
       
       <div className="card">

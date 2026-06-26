@@ -34,7 +34,7 @@ export default async function KuesionerPage({ searchParams }) {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Bank Pertanyaan Kuesioner</h1>
+        <h1 className="page-title">Kuesioner Digital AKHLAK</h1>
         <AddPertanyaanButton kategori={activeTab} />
       </div>
 

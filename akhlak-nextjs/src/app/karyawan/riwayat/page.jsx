@@ -30,7 +30,7 @@ export default async function RiwayatPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Riwayat & Tren Penilaian</h1>
+        <h1 className="page-title">Histori Penilaian</h1>
       </div>
 
       {/* Trend Chart */}

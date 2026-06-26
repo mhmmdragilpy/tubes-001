@@ -111,7 +111,7 @@ export default function ProfilClient() {
         </div>
       )}
 
-      <div className="page-header"><h1 className="page-title">Pengaturan Profil</h1></div>
+      <div className="page-header"><h1 className="page-title">Manajemen Profil</h1></div>
 
       <div className="grid-35-65">
         {/* Profil Card */}

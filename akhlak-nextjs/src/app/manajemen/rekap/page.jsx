@@ -44,7 +44,7 @@ export default async function ManajemenRekapPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Rekapitulasi Nilai Seluruh Karyawan</h1>
+        <h1 className="page-title">Histori Penilaian</h1>
       </div>
 
       <div className="stat-cards mb-24">

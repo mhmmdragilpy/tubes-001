@@ -77,12 +77,10 @@ Setelah proses `seed` di atas berhasil, Anda dapat masuk ke aplikasi menggunakan
 
 | Role | Nama / Jabatan | Email |
 | :--- | :--- | :--- |
-| **Admin HR** | Admin HR (SDM) | `admin@energi.co.id` |
-| **Manajemen** | Direktur Manajemen | `dir@energi.co.id` |
-| **Atasan** | Budi Santoso (Mgr. Operasi) | `budi@energi.co.id` |
-| **Atasan** | Anita Wijaya (Mgr. Keuangan) | `anita@energi.co.id` |
-| **Karyawan** | Yoga Kameswara (Operasi) | `yoga@energi.co.id` |
-| **Karyawan** | Siti Nurhaliza (Keuangan) | `siti@energi.co.id` |
+| **Admin HR** | Admin HR | `admin-hr@energi.co.id` |
+| **Manajemen** | Manajemen | `manajemen@energi.co.id` |
+| **Atasan** | Atasan 1 | `atasan@energi.co.id` |
+| **Karyawan** | Karyawan 1 | `karyawan@energi.co.id` |
 
 *(Terdapat lebih dari 20 akun karyawan dan manager lainnya di berbagai divisi yang bisa Anda periksa langsung di menu Data Karyawan).*
 

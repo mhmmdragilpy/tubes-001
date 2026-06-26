@@ -77,25 +77,23 @@ async function main() {
   // 3. Seed Users (Admin & Manajemen)
   const admin = await prisma.user.create({
     data: {
-      nip: '102012330100', nama_lengkap: 'Admin HR', email: 'admin@energi.co.id',
+      nip: '102012330100', nama_lengkap: 'Admin HR', email: 'admin-hr@energi.co.id',
       password_hash: defaultPassword, divisi: 'SDM', jabatan: 'HR Manager', role: 'admin_hr'
     }
   })
 
   const manajemen = await prisma.user.create({
     data: {
-      nip: '102012330200', nama_lengkap: 'Direktur Manajemen', email: 'dir@energi.co.id',
+      nip: '102012330200', nama_lengkap: 'Manajemen', email: 'manajemen@energi.co.id',
       password_hash: defaultPassword, divisi: 'Manajemen', jabatan: 'Direktur', role: 'manajemen'
     }
   })
 
   // 4. Seed Atasan (Manager per Divisi)
   const managersData = [
-    { nip: '102012330701', nama_lengkap: 'Budi Santoso', email: 'budi@energi.co.id', divisi: 'Operasi', jabatan: 'Manager Operasi' },
-    { nip: '102012330702', nama_lengkap: 'Anita Wijaya', email: 'anita@energi.co.id', divisi: 'Keuangan', jabatan: 'Manager Keuangan' },
-    { nip: '102012330703', nama_lengkap: 'Rahmat Hidayat', email: 'rahmat@energi.co.id', divisi: 'SDM', jabatan: 'Manager SDM' },
-    { nip: '102012330704', nama_lengkap: 'Kevin Pratama', email: 'kevin@energi.co.id', divisi: 'IT', jabatan: 'Manager IT' },
-    { nip: '102012330705', nama_lengkap: 'Linda Sari', email: 'linda@energi.co.id', divisi: 'Pemasaran', jabatan: 'Manager Pemasaran' },
+    { nip: '102012330701', nama_lengkap: 'Atasan 1', email: 'atasan@energi.co.id', divisi: 'Operasi', jabatan: 'Manager Operasi' },
+    { nip: '102012330702', nama_lengkap: 'Atasan 2', email: 'atasan2@energi.co.id', divisi: 'Keuangan', jabatan: 'Manager Keuangan' },
+    { nip: '102012330703', nama_lengkap: 'Atasan 3', email: 'atasan3@energi.co.id', divisi: 'IT', jabatan: 'Manager IT' }
   ]
 
   const managers = []
@@ -110,29 +108,17 @@ async function main() {
 
   // 5. Seed Karyawan (Staff under Managers)
   const staffData = [
-    // Operasi (under Budi)
-    { nip: '102012330801', nama_lengkap: 'Yoga Kameswara', email: 'yoga@energi.co.id', divisi: 'Operasi', jabatan: 'Supervisor Lapangan', atasanIdx: 0, perf: 'high' },
-    { nip: '102012330802', nama_lengkap: 'Rizal Fahmi', email: 'rizal@energi.co.id', divisi: 'Operasi', jabatan: 'Teknisi Senior', atasanIdx: 0, perf: 'med' },
-    { nip: '102012330803', nama_lengkap: 'Dinda Permata', email: 'dinda@energi.co.id', divisi: 'Operasi', jabatan: 'Admin Operasional', atasanIdx: 0, perf: 'med' },
+    // Operasi (under Atasan 1)
+    { nip: '102012330801', nama_lengkap: 'Karyawan 1', email: 'karyawan@energi.co.id', divisi: 'Operasi', jabatan: 'Staff Operasi', atasanIdx: 0, perf: 'high' },
+    { nip: '102012330802', nama_lengkap: 'Karyawan 2', email: 'karyawan2@energi.co.id', divisi: 'Operasi', jabatan: 'Staff Operasi', atasanIdx: 0, perf: 'med' },
     
-    // Keuangan (under Anita)
-    { nip: '102012330804', nama_lengkap: 'Siti Nurhaliza', email: 'siti@energi.co.id', divisi: 'Keuangan', jabatan: 'Analyst', atasanIdx: 1, perf: 'high' },
-    { nip: '102012330805', nama_lengkap: 'Wiranu Adji S.', email: 'wiranu@energi.co.id', divisi: 'Keuangan', jabatan: 'Akuntan', atasanIdx: 1, perf: 'high' },
-    { nip: '102012330806', nama_lengkap: 'Dewi Lestari', email: 'dewi@energi.co.id', divisi: 'Keuangan', jabatan: 'Staff Keuangan', atasanIdx: 1, perf: 'low' },
+    // Keuangan (under Atasan 2)
+    { nip: '102012330803', nama_lengkap: 'Karyawan 3', email: 'karyawan3@energi.co.id', divisi: 'Keuangan', jabatan: 'Staff Keuangan', atasanIdx: 1, perf: 'high' },
+    { nip: '102012330804', nama_lengkap: 'Karyawan 4', email: 'karyawan4@energi.co.id', divisi: 'Keuangan', jabatan: 'Staff Keuangan', atasanIdx: 1, perf: 'low' },
     
-    // SDM (under Rahmat)
-    { nip: '102012330807', nama_lengkap: 'Rina Permatasari', email: 'rina@energi.co.id', divisi: 'SDM', jabatan: 'Rekruter', atasanIdx: 2, perf: 'high' },
-    { nip: '102012330808', nama_lengkap: 'Akhmad Azmi A.', email: 'akhmad@energi.co.id', divisi: 'SDM', jabatan: 'Staff Payroll', atasanIdx: 2, perf: 'med' },
-    
-    // IT (under Kevin)
-    { nip: '102012330809', nama_lengkap: 'Dimas Anggara', email: 'dimas@energi.co.id', divisi: 'IT', jabatan: 'Software Engineer', atasanIdx: 3, perf: 'high' },
-    { nip: '102012330810', nama_lengkap: 'Ahmad Rizky P.', email: 'ahmad@energi.co.id', divisi: 'IT', jabatan: 'System Admin', atasanIdx: 3, perf: 'low' },
-    { nip: '102012330811', nama_lengkap: 'Tia Amanda', email: 'tia@energi.co.id', divisi: 'IT', jabatan: 'UI/UX Designer', atasanIdx: 3, perf: 'med' },
-
-    // Pemasaran (under Linda)
-    { nip: '102012330812', nama_lengkap: 'Fajar Nugroho', email: 'fajar@energi.co.id', divisi: 'Pemasaran', jabatan: 'Sales Executive', atasanIdx: 4, perf: 'low' },
-    { nip: '102012330813', nama_lengkap: 'Nadia Saphira', email: 'nadia@energi.co.id', divisi: 'Pemasaran', jabatan: 'Digital Marketing', atasanIdx: 4, perf: 'med' },
-    { nip: '102012330814', nama_lengkap: 'Reza Rahadian', email: 'reza@energi.co.id', divisi: 'Pemasaran', jabatan: 'Copywriter', atasanIdx: 4, perf: 'med' },
+    // IT (under Atasan 3)
+    { nip: '102012330805', nama_lengkap: 'Karyawan 5', email: 'karyawan5@energi.co.id', divisi: 'IT', jabatan: 'Staff IT', atasanIdx: 2, perf: 'high' },
+    { nip: '102012330806', nama_lengkap: 'Karyawan 6', email: 'karyawan6@energi.co.id', divisi: 'IT', jabatan: 'Staff IT', atasanIdx: 2, perf: 'med' }
   ]
 
   const staffs = []
@@ -143,37 +129,29 @@ async function main() {
         password_hash: defaultPassword, role: 'karyawan', atasan_id: managers[s.atasanIdx].id
       }
     })
-    // Store perf metric in object for later
     res.perf = s.perf
     res.atasanIdx = s.atasanIdx
     staffs.push(res)
   }
 
-  // 6. Generate Penilaian and Details
-  // Helper to get random score based on perf profile
+  // Helper to get random score
   function getRandomScore(perf, isSelf = false) {
     let min, max;
     if (perf === 'high') { min = 4; max = 5; }
     else if (perf === 'low') { min = 2; max = 4; }
     else { min = 3; max = 5; }
 
-    // Simulate "Blind Spot" where Self score is much higher than others
-    if (isSelf && perf === 'low') {
-      min = 4; max = 5; 
-    } else if (isSelf && perf === 'high') {
-      min = 3; max = 4; // Humble high performer
-    }
+    if (isSelf && perf === 'low') { min = 4; max = 5; }
+    else if (isSelf && perf === 'high') { min = 3; max = 4; }
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   const allEmployees = [...managers, ...staffs]
 
-  let penilaianCounter = 0;
-
   console.log('Generate penilaian (360 derajat) untuk setiap karyawan...')
   for (const emp of allEmployees) {
-    const isSelesai = Math.random() > 0.1; // 90% completion rate for realism
+    const isSelesai = Math.random() > 0.1;
     
     // 1. SELF ASSESSMENT
     const selfStatus = isSelesai ? 'selesai' : 'proses';
@@ -232,7 +210,6 @@ async function main() {
     }
 
     // 4. PEER -> PEER
-    // Assign 2 peers from the same division
     const peers = staffs.filter(s => s.divisi === emp.divisi && s.id !== emp.id).slice(0, 2)
     for (const p of peers) {
       const peerStatus = Math.random() > 0.15 ? 'selesai' : 'proses';
@@ -260,11 +237,6 @@ async function main() {
       periode_id: periode.id, penilai_id: staffs[1].id, dinilai_id: staffs[0].id, tipe_relasi: 'peer', status: 'belum', approval_status: 'pending'
     }
   })
-  await prisma.penilaian.create({
-    data: {
-      periode_id: periode.id, penilai_id: staffs[2].id, dinilai_id: staffs[0].id, tipe_relasi: 'peer', status: 'belum', approval_status: 'pending'
-    }
-  })
 
   // Also seed some data for Semester Lalu (Semester 2 2025)
   console.log('Generate riwayat penilaian semester lalu...')
@@ -276,7 +248,7 @@ async function main() {
     })
     for (const q of pertanyaanDB) {
       await prisma.detailPenilaian.create({
-        data: { penilaian_id: penLalu.id, pertanyaan_id: q.id, skor: Math.max(3, getRandomScore(emp.perf || 'med') - 1) } // Skor lalu sedikit lebih rendah
+        data: { penilaian_id: penLalu.id, pertanyaan_id: q.id, skor: Math.max(3, getRandomScore(emp.perf || 'med') - 1) }
       })
     }
     
@@ -296,72 +268,72 @@ async function main() {
 
   // Add some specific active/incomplete dummy assessments for testing
   console.log('Menambahkan data dummy assessment belum selesai untuk testing karyawan...')
-  // 1. Yoga Kameswara (staffs[0]) assesses Anita Wijaya (Manager Keuangan) as a cross-divisional peer/colleague
+  // 1. Karyawan 1 assesses Atasan 2 as peer
   await prisma.penilaian.create({
     data: {
       periode_id: periode.id,
       penilai_id: staffs[0].id,
-      dinilai_id: managers[1].id, // Anita
+      dinilai_id: managers[1].id, // Atasan 2
       tipe_relasi: 'peer',
       status: 'belum',
       approval_status: 'disetujui'
     }
   })
 
-  // 2. Yoga Kameswara (staffs[0]) assesses Siti Nurhaliza (staffs[3]) as peer
+  // 2. Karyawan 1 assesses Karyawan 4 as peer
   await prisma.penilaian.create({
     data: {
       periode_id: periode.id,
       penilai_id: staffs[0].id,
-      dinilai_id: staffs[3].id, // Siti
+      dinilai_id: staffs[3].id, // Karyawan 4
       tipe_relasi: 'peer',
       status: 'belum',
       approval_status: 'disetujui'
     }
   })
 
-  // 3. Rizal Fahmi (staffs[1]) assesses Budi Santoso (Atasan) - ensure there is a pending one
+  // 3. Karyawan 2 assesses Atasan 1 (Atasan)
   await prisma.penilaian.create({
     data: {
       periode_id: periode.id,
       penilai_id: staffs[1].id,
-      dinilai_id: managers[0].id, // Budi
+      dinilai_id: managers[0].id, // Atasan 1
       tipe_relasi: 'atasan',
       status: 'belum',
       approval_status: 'disetujui'
     }
   })
 
-  // 4. Rizal Fahmi (staffs[1]) assesses Dinda Permata as peer
+  // 4. Karyawan 2 assesses Karyawan 1 as peer
   await prisma.penilaian.create({
     data: {
       periode_id: periode.id,
       penilai_id: staffs[1].id,
-      dinilai_id: staffs[2].id, // Dinda
+      dinilai_id: staffs[0].id, // Karyawan 1
       tipe_relasi: 'peer',
       status: 'belum',
       approval_status: 'disetujui'
     }
   })
 
-  // 5. Siti Nurhaliza (staffs[3]) assesses Wiranu Adji S. (staffs[4])
+  // 5. Karyawan 4 assesses Karyawan 3
   await prisma.penilaian.create({
     data: {
       periode_id: periode.id,
       penilai_id: staffs[3].id,
-      dinilai_id: staffs[4].id,
+      dinilai_id: staffs[2].id, // Karyawan 3
       tipe_relasi: 'peer',
       status: 'belum',
       approval_status: 'disetujui'
     }
   })
 
-  // 6. Siti Nurhaliza (staffs[3]) assesses Anita Wijaya (Atasan)
+  // 6. Karyawan 4 assesses Atasan 2 (Atasan)
   await prisma.penilaian.create({
     data: {
       periode_id: periode.id,
       penilai_id: staffs[3].id,
-      dinilai_id: managers[1].id,
+      dinilai_id: managers[1].id, // Atasan 2
       tipe_relasi: 'atasan',
       status: 'belum',
       approval_status: 'disetujui'
@@ -372,7 +344,7 @@ async function main() {
   console.log('Menambahkan data dummy IDP karyawan untuk laporan...')
   await prisma.idp.create({
     data: {
-      user_id: staffs[0].id, // Yoga Kameswara
+      user_id: staffs[0].id,
       periode_id: periode.id,
       area_pengembangan: 'Kompeten',
       target_akhir: 'Menguasai Pemrograman Next.js',
@@ -384,7 +356,7 @@ async function main() {
 
   await prisma.idp.create({
     data: {
-      user_id: staffs[0].id, // Yoga Kameswara
+      user_id: staffs[0].id,
       periode_id: periode.id,
       area_pengembangan: 'Adaptif',
       target_akhir: 'Mampu beradaptasi dengan alur kerja DevOps baru',
@@ -396,7 +368,7 @@ async function main() {
 
   await prisma.idp.create({
     data: {
-      user_id: staffs[1].id, // Rizal Fahmi
+      user_id: staffs[1].id,
       periode_id: periode.id,
       area_pengembangan: 'Amanah',
       target_akhir: 'Menyelesaikan tugas proyek tepat waktu',
@@ -408,7 +380,7 @@ async function main() {
 
   await prisma.idp.create({
     data: {
-      user_id: staffs[3].id, // Siti Nurhaliza
+      user_id: staffs[3].id,
       periode_id: periode.id,
       area_pengembangan: 'Kompeten',
       target_akhir: 'Sertifikasi Analisis Keuangan Lanjutan',
@@ -418,7 +390,7 @@ async function main() {
     }
   });
 
-  console.log('Database Berhasil Di-seed dengan Data Realistis yang Melimpah!')
+  console.log('Database Berhasil Di-seed dengan Data Realistis Terstandar!')
 }
 
 main()

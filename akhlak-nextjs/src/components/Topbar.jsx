@@ -14,8 +14,53 @@ export default function Topbar({ title }) {
   let displayTitle = title;
   if (!displayTitle) {
     const segments = pathname.split('/').filter(Boolean);
-    displayTitle = segments.length > 1 ? segments[1].replace('-', ' ') : 'Dashboard';
-    displayTitle = displayTitle.charAt(0).toUpperCase() + displayTitle.slice(1);
+    const role = segments[0];
+    const page = segments[1];
+    
+    const titleMapping = {
+      'admin-hr': {
+        'dashboard': 'Dashboard Monitoring',
+        'periode': 'Manajemen Periode Penilaian',
+        'karyawan': 'Manajemen Data Karyawan & Penilai',
+        'peer': 'Daftar Peer',
+        'kuesioner': 'Kuesioner Digital AKHLAK',
+        'rekap': 'Histori & Audit Trail',
+        'profil': 'Manajemen Profil'
+      },
+      'atasan': {
+        'dashboard': 'Dashboard Analitik',
+        'approval': 'Daftar peer',
+        'form-penilaian': 'Penilaian 360°',
+        'rekap': 'Histori Penilaian',
+        'idp': 'Approval IDP',
+        'export': 'Export Laporan',
+        'profil': 'Manajemen Profil'
+      },
+      'karyawan': {
+        'dashboard': 'Dashboard Personal',
+        'form-penilaian': 'Penilaian 360°',
+        'hasil': 'Hasil Penilaian',
+        'riwayat': 'Histori Penilaian',
+        'idp': 'Laporan & IDP',
+        'profil': 'Manajemen Profil'
+      },
+      'manajemen': {
+        'dashboard': 'Dashboard Analitik',
+        'monitoring': 'Monitoring Penilaian',
+        'rekap': 'Histori Penilaian',
+        'idp': 'Laporan & IDP',
+        'export': 'Export Report',
+        'notifikasi': 'Notifikasi Sistem',
+        'profil': 'Manajemen Profil'
+      }
+    };
+    
+    if (role && page && titleMapping[role] && titleMapping[role][page]) {
+      displayTitle = titleMapping[role][page];
+    } else {
+      displayTitle = segments.length > 1 ? segments[1].replace(/-/g, ' ') : 'Dashboard';
+      displayTitle = displayTitle.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    }
   }
 
   useEffect(() => {

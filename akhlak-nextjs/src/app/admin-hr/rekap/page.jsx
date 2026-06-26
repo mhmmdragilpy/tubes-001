@@ -38,7 +38,7 @@ export default async function RekapPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Rekap Hasil Penilaian 360°</h1>
+        <h1 className="page-title">Histori & Audit Trail</h1>
       </div>
 
       <div className="stat-cards cols-3">

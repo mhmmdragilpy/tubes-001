@@ -14,46 +14,47 @@ const ICONS = {
   person: <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>,
   logout: <svg viewBox="0 0 24 24"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>,
   check: <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>,
-  chart: <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+  chart: <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>,
+  bell: <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>
 };
 
 const MENUS = {
   'admin-hr': {
     items: [
-      { id: 'dashboard', label: 'Dashboard', path: '/admin-hr/dashboard', icon: 'dashboard' },
-      { id: 'periode', label: 'Periode Penilaian', path: '/admin-hr/periode', icon: 'periode' },
-      { id: 'karyawan', label: 'Data Karyawan', path: '/admin-hr/karyawan', icon: 'users' },
+      { id: 'dashboard', label: 'Dashboard Monitoring', path: '/admin-hr/dashboard', icon: 'dashboard' },
+      { id: 'periode', label: 'Manajemen Periode Penilaian', path: '/admin-hr/periode', icon: 'periode' },
+      { id: 'karyawan', label: 'Manajemen Data Karyawan & Penilai', path: '/admin-hr/karyawan', icon: 'users' },
       { id: 'peer', label: 'Daftar Peer', path: '/admin-hr/peer', icon: 'peer' },
-      { id: 'kuesioner', label: 'Kuesioner AKHLAK', path: '/admin-hr/kuesioner', icon: 'form' },
-      { id: 'rekap', label: 'Rekap Penilaian', path: '/admin-hr/rekap', icon: 'file' },
+      { id: 'kuesioner', label: 'Kuesioner Digital AKHLAK', path: '/admin-hr/kuesioner', icon: 'form' },
+      { id: 'rekap', label: 'Histori & Audit Trail', path: '/admin-hr/rekap', icon: 'file' },
       { type: 'divider' },
-      { id: 'profil', label: 'Profil', path: '/admin-hr/profil', icon: 'person' },
+      { id: 'profil', label: 'Manajemen Profil', path: '/admin-hr/profil', icon: 'person' },
       { id: 'logout', label: 'Logout', path: '/login', icon: 'logout', isLogout: true },
     ]
   },
   'atasan': {
     items: [
       { id: 'dashboard', label: 'Dashboard Analitik', path: '/atasan/dashboard', icon: 'dashboard' },
-      { id: 'approval', label: 'Approval Peer', path: '/atasan/approval', icon: 'check' },
-      { id: 'form-penilaian', label: 'Form Penilaian', path: '/atasan/form-penilaian', icon: 'form' },
-      { id: 'rekap', label: 'Rekap Penilaian', path: '/atasan/rekap', icon: 'file' },
+      { id: 'approval', label: 'Daftar peer', path: '/atasan/approval', icon: 'check' },
+      { id: 'form-penilaian', label: 'Penilaian 360°', path: '/atasan/form-penilaian', icon: 'form' },
+      { id: 'rekap', label: 'Histori Penilaian', path: '/atasan/rekap', icon: 'file' },
       { id: 'export', label: 'Export Laporan', path: '/atasan/export', icon: 'chart' },
       { id: 'idp', label: 'Approval IDP', path: '/atasan/idp', icon: 'check' },
       { type: 'divider' },
       { id: 'idp-karyawan', label: 'Rencana IDP Saya', path: '/karyawan/idp', icon: 'file' },
-      { id: 'profil', label: 'Profil', path: '/atasan/profil', icon: 'person' },
+      { id: 'profil', label: 'Manajemen Profil', path: '/atasan/profil', icon: 'person' },
       { id: 'logout', label: 'Logout', path: '/login', icon: 'logout', isLogout: true },
     ]
   },
   'karyawan': {
     items: [
-      { id: 'dashboard', label: 'Dashboard', path: '/karyawan/dashboard', icon: 'dashboard' },
-      { id: 'form-penilaian', label: 'Form Penilaian', path: '/karyawan/form-penilaian', icon: 'form' },
+      { id: 'dashboard', label: 'Dashboard Personal', path: '/karyawan/dashboard', icon: 'dashboard' },
+      { id: 'form-penilaian', label: 'Penilaian 360°', path: '/karyawan/form-penilaian', icon: 'form' },
       { id: 'hasil', label: 'Hasil Penilaian', path: '/karyawan/hasil', icon: 'chart' },
-      { id: 'riwayat', label: 'Riwayat', path: '/karyawan/riwayat', icon: 'periode' },
-      { id: 'idp', label: 'Rencana IDP', path: '/karyawan/idp', icon: 'file' },
+      { id: 'riwayat', label: 'Histori Penilaian', path: '/karyawan/riwayat', icon: 'periode' },
+      { id: 'idp', label: 'Laporan & IDP', path: '/karyawan/idp', icon: 'file' },
       { type: 'divider' },
-      { id: 'profil', label: 'Profil', path: '/karyawan/profil', icon: 'person' },
+      { id: 'profil', label: 'Manajemen Profil', path: '/karyawan/profil', icon: 'person' },
       { id: 'logout', label: 'Logout', path: '/login', icon: 'logout', isLogout: true },
     ]
   },
@@ -61,11 +62,12 @@ const MENUS = {
     items: [
       { id: 'dashboard', label: 'Dashboard Analitik', path: '/manajemen/dashboard', icon: 'dashboard' },
       { id: 'monitoring', label: 'Monitoring Penilaian', path: '/manajemen/monitoring', icon: 'users' },
-      { id: 'rekap', label: 'Rekap Penilaian', path: '/manajemen/rekap', icon: 'file' },
+      { id: 'rekap', label: 'Histori Penilaian', path: '/manajemen/rekap', icon: 'file' },
       { id: 'idp', label: 'Laporan & IDP', path: '/manajemen/idp', icon: 'file' },
       { id: 'export', label: 'Export Report', path: '/manajemen/export', icon: 'chart' },
+      { id: 'notifikasi', label: 'Notifikasi Sistem', path: '/manajemen/notifikasi', icon: 'bell' },
       { type: 'divider' },
-      { id: 'profil', label: 'Profil', path: '/manajemen/profil', icon: 'person' },
+      { id: 'profil', label: 'Manajemen Profil', path: '/manajemen/profil', icon: 'person' },
       { id: 'logout', label: 'Logout', path: '/login', icon: 'logout', isLogout: true },
     ]
   }

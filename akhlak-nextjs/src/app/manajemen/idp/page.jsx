@@ -37,7 +37,7 @@ export default async function ManajemenIdpPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Laporan Rencana Aksi Karyawan (IDP)</h1>
+        <h1 className="page-title">Laporan & IDP</h1>
       </div>
 
       <div className="stat-cards mb-24">

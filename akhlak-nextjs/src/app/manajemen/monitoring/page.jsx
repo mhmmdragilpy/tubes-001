@@ -43,7 +43,7 @@ export default async function MonitoringPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Monitoring Tingkat Partisipasi</h1>
+        <h1 className="page-title">Monitoring Penilaian</h1>
         <div className="page-actions">
           <select className="form-select" style={{ width: 'auto' }}>
             <option>Semester 1 — 2026</option>

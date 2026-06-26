@@ -54,7 +54,7 @@ export default async function AtasanFormPenilaianList() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Daftar Form Penilaian</h1>
+        <h1 className="page-title">Penilaian 360°</h1>
       </div>
 
       <div className="card mb-24">

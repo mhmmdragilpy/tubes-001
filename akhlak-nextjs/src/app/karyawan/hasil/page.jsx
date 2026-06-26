@@ -23,7 +23,7 @@ export default async function HasilPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Hasil Penilaian AKHLAK</h1>
+        <h1 className="page-title">Hasil Penilaian</h1>
         <div className="page-actions">
           <select className="form-select" style={{width: 'auto'}}>
             <option>Semester 1 — 2026</option>

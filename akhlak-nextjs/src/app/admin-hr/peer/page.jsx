@@ -47,7 +47,7 @@ export default async function PeerPage() {
   return (
     <main className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Manajemen Penilai (Peer List)</h1>
+        <h1 className="page-title">Daftar Peer</h1>
         <div className="page-actions">
           <button className="btn btn-outline">Generate Otomatis</button>
           <AddPeerMappingButton users={users} periodeId={activePeriode?.id} />

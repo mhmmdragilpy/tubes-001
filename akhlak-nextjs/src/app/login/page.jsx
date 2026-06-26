@@ -77,12 +77,10 @@ export default function LoginPage() {
               style={{ borderColor: 'var(--primary)', backgroundColor: '#eff6ff', cursor: 'pointer' }}
             >
               <option value="">-- Pilih Akun Testing --</option>
-              <option value="admin@energi.co.id">Admin HR (admin@energi.co.id)</option>
-              <option value="dir@energi.co.id">Manajemen (dir@energi.co.id)</option>
-              <option value="budi@energi.co.id">Atasan Operasi (budi@energi.co.id)</option>
-              <option value="anita@energi.co.id">Atasan Keuangan (anita@energi.co.id)</option>
-              <option value="yoga@energi.co.id">Karyawan 1 - Yoga (yoga@energi.co.id)</option>
-              <option value="siti@energi.co.id">Karyawan 2 - Siti (siti@energi.co.id)</option>
+              <option value="admin-hr@energi.co.id">Admin HR (admin-hr@energi.co.id)</option>
+              <option value="manajemen@energi.co.id">Manajemen (manajemen@energi.co.id)</option>
+              <option value="atasan@energi.co.id">Atasan (atasan@energi.co.id)</option>
+              <option value="karyawan@energi.co.id">Karyawan (karyawan@energi.co.id)</option>
             </select>
           </div>
 
